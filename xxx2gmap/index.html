@@ -1,0 +1,45 @@
+<HTML>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../jquery/jquery-ui.min.css" />
+<HEAD>
+<TITLE>Conversion d&#146;une URL en fichier ITN pour Tomtom</TITLE>
+</HEAD>
+<BODY BGCOLOR="grey">
+<div id="dialog"></div>
+	<script type="text/javascript" src="./Loader.js"></script>
+	<script type="text/javascript" src="../jquery/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
+<BR><BR>
+<div id='all'>
+Vous voulez extraire un fichier .itn (TomTom) ou .gpx pour l'ouvrir dans ###GMAPLNK### ou dans ###BMAPLNK###<BR>
+<INPUT TYPE=HIDDEN NAME="MAX_FILE_SIZE" VALUE="30000">
+<p>Choississez votre fichier .itn ou .gpx: <INPUT TYPE=FILE ID="filename" NAME="filename" size=60></p><br>
+<a><span id="divlistroutes"></span>&nbsp;<span id="nbetapesmax"></span></a><br>
+Indiquez la premi&egrave;re &eacute;tape &agrave; prendre en compte : <span id="divdebutetape"> </span><br>
+Indiquez le nombre d'&eacute;tapes &agrave; prendre en compte : <span id="divnbetapes"> </span><br>
+<ul>
+<label for="autoroutes"><li>Autoriser les autoroutes: <INPUT TYPE=CHECKBOX NAME='autoroutes' id='autoroutes' VALUE='on'></li></label>
+<label for ="peages"><li>Autoriser les p&eacute;ages: <INPUT TYPE=CHECKBOX NAME='peages' id='peages' VALUE='on'></li></label>
+</ul>
+Vous souhaitez une sortie pour :
+<label for="sendtypegmap">
+&nbsp;&nbsp;
+<input type="radio" name="sendtype" id="sendtypegmap" value="gmap">
+&nbsp;
+###GMAPLNK###
+</label>
+<label for="sendtypebmap">
+&nbsp;&nbsp;
+<input type="radio" name="sendtype" id="sendtypebmap" value="bmap">
+&nbsp;
+###BMAPLNK###
+</label>
+<br><INPUT id="go" TYPE=BUTTON VALUE='Go!'><br>
+</div>
+<BR>
+<a href="https://www.facebook.com/messages/gmap2itn" target="_blank">Pour m&rsquo;&eacute;crire</a><br>
+<a href="https://github.com/sdesimeur/gmap2xxx/tree/master/">Ici</a>, vous trouverez les sources de cette page.
+Libre &agrave; vous de les modifier.<BR>
+
+</BODY>
+</HTML>

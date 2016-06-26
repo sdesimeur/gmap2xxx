@@ -1,0 +1,230 @@
+.ui-dialog {
+	border-radius: 10px;
+	ms-box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+	ms-border: 3px solid black;
+	border: 3px solid black;
+}
+#dialogs {
+	overflow-y:auto;
+	overflow-x:auto;
+    z-index: 3;
+#    position: absolute;
+#    display: block;
+}
+h1 {
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+	text-align: center;
+	margin: 0;
+}
+
+h2 {
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+	text-align: center;
+	margin: 0;
+}
+
+body {
+#	color:black;
+	background-color:gray;
+	background-image: url(../.images/image_de_fond.png);
+	background-attachment:fixed;
+}
+
+h4 {
+	font-weight:bold;
+	text-decoration:underline;
+	font-style:italic;
+	line-height:1;
+	padding: 20;
+	margin: 0;
+}
+
+table#promotion tr td.cote {
+	font-weight:bold;
+	margin-left:auto;
+	margin-right:auto;
+	width: auto;
+#	margin:0px;
+	padding:0px;
+#	border: 10px solid #999;
+	box-shadow: 10 10 10 rgba(0,0,0,0.5);
+	background-color: rgba(255,255,255,1);
+	border-radius: 10px;
+	text-align: center;
+	ms-box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+	ms-border: 3px solid black;
+	border: 3px solid black;
+}
+
+table#promotion tr td#gauche {
+	width:530px;
+}
+table#promotion tr td#droite {
+	width:270px;
+}
+	
+iframe#facebook_like {
+	margin-left:auto;
+	margin-right:auto;
+	border-radius: 5px;
+}
+
+iframe#facebook_subscribe {
+}
+div#nburlgpx {
+	visibility: hidden;
+	height: 0px;
+}
+
+div#divinfobulle {
+	font-size: 80%;
+
+}
+
+img#img_gmap2itn {
+	float:center;
+	border-radius: 10px;
+}
+
+table.titre_principal {
+	width: 100%;
+	background-color: rgba(255,255,255,1);
+	text-align: center;
+	margin-left:auto; 
+	margin-right:auto;
+	ms-border: 3px none black;
+	border: 3px none black;
+}
+
+table.titre_principal tr td {
+	background-color: rgba(0,0,0,0.2);
+	ms-border: 3px solid black;
+	border: 3px solid black;
+}
+
+table#over_titre {
+	width:100%;
+	ms-background-color: rgba(255,255,255,1);
+	background-color: rgba(255,255,255,1);
+	ms-box-shadow: 0px 0px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 0px rgba(0,0,0,0.5);
+	ms-border: 0px none black;
+	border: 0px none black;
+	ms-border-spacing: 0px;
+	border-spacing: 0px;
+	ms-padding:0px;
+	padding:0px;
+}
+
+table#over_titre tr td {
+	text-align:center;
+	ms-border-spacing: 0px;
+	border-spacing: 0px;
+	ms-padding:0px;
+	padding:0px;
+}
+
+table#newsheader td {
+	ms-background-color: rgba(230,230,230,1);
+	background-color: rgba(230,230,230,1);
+}
+
+table {
+	width:100%;
+	ms-background-color: rgba(0,0,0,0.2);
+	background-color: rgba(0,0,0,0.2);
+	ms-box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+	box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+	ms-border: 3px solid black;
+	border: 3px solid black;
+}
+
+table , table td {
+	ms-border-spacing: 5px;
+	border-spacing: 5px;
+	ms-padding:5px;
+	padding:5px;
+	ms-border-radius: 10px;
+	border-radius: 10px;
+}
+
+table td, table th {
+	ms-border: 3px ;
+	border: 3px ;
+}
+
+table td.gris {
+	ms-background-color: rgba(230,230,230,1);
+	background-color: rgba(230,230,230,1);
+}
+
+table td.conseils {
+	ms-background-color: rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,0.5);
+}
+
+ul#zoneallurls {
+	list-style: circle;
+}
+
+ul#zoneallurls li span {
+	font-weight:bold;
+	text-decoration:underline;
+	font-style:italic;
+	transition: all 3s ease-in-out;
+} 
+
+span#enamezone {
+	visibility: hidden;
+}
+
+span#fnamezone {
+	visibility: visible;
+}
+
+div.bas_de_page {
+	font-weight:bold;
+	font-size:150%;	
+}
+
+table#backgd {
+	width:100%;
+	background-color: rgba(255,255,255,0);
+	ms-box-shadow: 0px 0px 0px;
+	box-shadow: 0px 0px 0px;
+	ms-border: 3px none black;
+	border: 3px none black;
+
+}
+
+table#backgd td#gmap2xxx{
+}
+
+a#submitbtn:active {
+    font: bold 22px Arial;
+    text-decoration: none;
+    background-color: #AAAAAA;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #333333;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #333333;
+	ms-border-radius: 5px;
+	border-radius: 5px;
+}
+a#submitbtn {
+    font: bold 22px Arial;
+    text-decoration: none;
+    background-color: #EEEEEE;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+	ms-border-radius: 5px;
+	border-radius: 5px;
+}

@@ -1,0 +1,17 @@
+<div class="row">
+    <div>
+        <table>
+            <tbody ng-repeat="req in reqs | orderBy:ndate:true | limitFromLimitNb:firstInPage:numPerPage">
+                <tr class="gris">
+                    <td class="alignleft">IP: {{req.ip}}</td>
+                    <td class="alignleft">Ids: {{req.ids}}</td>
+                    <td class="alignleft">Date: {{req.ndate}}</td>
+                    <td class="alignleft">Nombre de requetes: {{req.nbids}}</td>
+                    <td class="alignleft">Nombre d'URLS: {{req.nburls}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <uib-pagination total-items="reqs.length" items-per-page="numPerPage" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false" ng-change="pageChanged()"></uib-pagination>
+        <p>{{nbtotal}}</p>
+    </div>
+</div>

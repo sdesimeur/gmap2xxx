@@ -1,0 +1,7 @@
+<?php
+return array(
+    'googleApiKey=' => array(
+        'Direction' => "",
+    ),
+);
+?>

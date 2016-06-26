@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+#  RewriteBase /gmap_xxx/Stats/api/
+#  RewriteBase /Stats/api/
+  RewriteRule ^ index.php [L]
+</IfModule>

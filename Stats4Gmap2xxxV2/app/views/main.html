@@ -1,0 +1,34 @@
+<div class="row">
+    <div>
+        <table>
+            <tbody ng-repeat="req in reqs | orderBy:orderProp:true | limitFromLimitNb:firstInPage:numPerPage">
+                <tr class="gris">
+                    <td class="alignleft">IP: {{req.ip}}</td>
+                    <td class="alignleft">Date: {{req.ndate}}</td>
+                    <td class="alignleft">Extension: {{req.typeext}}</td>
+                    <td class="alignleft">UserAgent: {{req.useragent|decodeURIComponent}}</td>
+                </tr>
+                <tr class="gris">
+                   <td class="alignright">FileName: {{req.fname|decodeURIComponent}}</td>
+                   <td class="alignright">Email: {{req.ename}}</td>
+                   <td class="alignright">SendType: {{req.sendtype}}</td>
+                   <td class="alignright">No: {{req.id}}</td>
+                </tr>
+                <tr class="gris">
+                   <td class="alignright">ExtraWpts: {{trueOrFalse(req.extrawpts)}}</td>
+                   <td class="alignright">ExtraTrk: {{trueOrFalse(req.extratrk)}}</td>
+                   <td class="alignright">Del1Step0: {{trueOrFalse(req.del1step0)}}</td>
+                   <td class="alignright">Del1Step1: {{trueOrFalse(req.del1step1)}}</td>
+                </tr>
+                <tr ng-repeat="url in urls | filter: { id4identities:req.id }:true" >
+                    <td><a href="{{url.url|decodeURIComponent}}" target="_blank">url {{ url.id4identities }}</a></td>
+                    <td>Suppression premiere etape:{{trueOrFalse(url.del1step)}}</td>
+                    <td>Erreur ExtraWptsTrk:{{trueOrFalse(url.errorjson)}}</td>
+                    <td>Erreur ExtraWptsTrk:{{trueOrFalse(url.errorjson2)}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <uib-pagination total-items="reqs.length" items-per-page="numPerPage" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-link-numbers="true" rotate="false" ng-change="pageChanged()"></uib-pagination>
+        <p>{{nbtotal}}</p>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+local.php
+*.local.php
+*.nogit.php
