@@ -29,6 +29,11 @@
 # http://blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html
 # http://hacks.mozilla.org/2011/11/using-cors-to-load-webgl-textures-from-cross-domain-images/
 
+#AuthType Basic
+#AuthName "Saisissez vos identifants"
+#AuthUserFile /kunden/homepages/33/d152137012/htdocs/.pass/.htpasswd
+#Require user admin
+
 <IfModule mod_setenvif.c>
     <IfModule mod_headers.c>
         <FilesMatch "\.(gif|ico|jpe?g|png|svg|svgz|webp)$">

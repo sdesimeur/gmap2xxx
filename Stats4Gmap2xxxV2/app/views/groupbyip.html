@@ -3,11 +3,11 @@
         <table>
             <tbody ng-repeat="req in reqs | orderBy:ndate:true | limitFromLimitNb:firstInPage:numPerPage">
                 <tr class="gris">
-                    <td class="alignleft">IP: {{req.ip}}</td>
-                    <td class="alignleft">Ids: {{req.ids}}</td>
-                    <td class="alignleft">Date: {{req.ndate}}</td>
-                    <td class="alignleft">Nombre de requetes: {{req.nbids}}</td>
-                    <td class="alignleft">Nombre d'URLS: {{req.nburls}}</td>
+                    <td class="alignleft" width="120">IP: {{req.ip}}</td>
+                    <td class="alignleft" width="120">Ids: {{req.ids}}</td>
+                    <td class="alignleft" width="600">Date: {{req.ndate}}</td>
+                    <td class="alignleft" width="95">Nombre de requetes: {{req.nbids}}</td>
+                    <td class="alignleft" width="90">Nombre d'URLS: {{req.nburls}}</td>
                 </tr>
             </tbody>
         </table>
