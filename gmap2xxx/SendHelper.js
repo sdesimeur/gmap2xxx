@@ -75,19 +75,6 @@ function SendHelper (myCaller) {
     }
     this.send2file = function (data) {
         var fname=this.vars.fname+'.'+this.vars.typeext.substr(-3);
-<<<<<<< HEAD
-        var temp = 'En cliquant sur le lien <a id="tempanchor"';
-        temp+=' download="'+fname+'"';
-        temp+=' target="_blank"';
-        if (this.vars.typeext=='typeitf') {
-            temp+=' href="' + URL.createObjectURL(data)  + '">';
-        } else {
-            temp+= ' href="data:text/plain;charset=utf-8;base64,'+ Base64.encode(data) +'">';
-        }
-        temp+= fname + '</a>.';
-        
-        new Dialog("fichier").affiche("Téléchargez votre fichier", temp,false);
-=======
         var link = this.downloadFile(data, fname);
         if (link != false) {
             var temp = "Si le téléchargement ne démarre pas automatiquement,<br>"
@@ -100,7 +87,6 @@ function SendHelper (myCaller) {
             temp += link.outerHTML;
             new Dialog("fichier").affiche("Téléchargez votre fichier", temp,false);
         }
->>>>>>> v067
     }
     
     this.send2screen = function (data) {
