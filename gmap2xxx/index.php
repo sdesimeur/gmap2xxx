@@ -14,7 +14,7 @@
 <body>
     <?php include "../mysql/security.php"; ?>
     <div id="dialogs"></div>
-	<script type="text/javascript" src="./Loader.js?version=67"></script>
+	<script type="text/javascript" src="./Loader.js?version=68"></script>
 	<script type="text/javascript" src="../jquery/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
 <!--	<script type="text/javascript" src="./View.js"></script>
