@@ -253,7 +253,7 @@ function View () {
 
 $(document).ready(function () { 
     var view = new View();
-    document.body.innerHTML=document.body.innerHTML.replace(/###GMAPLNK###/g,'<a href="https://www.google.fr/maps" target="_blank">GoogleMaps</a>');
+    document.body.innerHTML=document.body.innerHTML.replace(/###GMAPLNK###/g,'<a href="https://www.google.fr/maps/dir/" target="_blank">GoogleMaps</a>');
     document.body.innerHTML=document.body.innerHTML.replace(/###BMAPLNK###/g,'<a href="https://www.bing.com/mapspreview" target="_blank">BingMaps</a>');
     view.loadall();
     
