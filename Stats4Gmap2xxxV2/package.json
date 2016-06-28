@@ -1,9 +1,7 @@
 {
   "name": "stats4gmap2xxxv2",
   "version": "0.0.0",
-  "dependencies": {
-    "angular-ui-bootstrap": "~1.3.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "cssmin": "^0.4.3",
     "eventemitter3": "^0.1.6",
