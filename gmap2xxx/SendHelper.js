@@ -86,6 +86,7 @@ function SendHelper (myCaller) {
             //temp+= fname + '</a>.';
             temp += link.outerHTML;
             new Dialog("fichier").affiche("Téléchargez votre fichier", temp,false);
+            link.click();
         }
     }
     
@@ -121,7 +122,7 @@ function SendHelper (myCaller) {
                 href: 'data:attachment/csv;base64,' + encodeURI(btoa(content)),
                 target: '_blank',
                 download: filename
-            })[0].click();
+            })[0];
             /*$timeout(function() {
                 link.remove();
             }, 50);*/
