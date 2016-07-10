@@ -14,7 +14,7 @@
 <body>
     <?php include "../mysql/security.php"; ?>
     <div id="dialogs"></div>
-	<script type="text/javascript" src="./Loader.js?version=69"></script>
+	<script type="text/javascript" src="./Loader.js?version=070"></script>
 	<script type="text/javascript" src="../jquery/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
 <!--	<script type="text/javascript" src="./View.js"></script>
@@ -95,8 +95,8 @@
 						<label for="typeitn"><b><i><u>ITN</u></i></b> (Pour Tomtom)</label>    
 						<input type=radio name="typeext" id="typegpx" value="typegpx">
 						<label for="typegpx"><b><i><u>GPX</u></i></b> (Pour un GPS qui comprend ce type g&eacute;n&eacute;rique)</label>
-						<input type=radio name="typeext" id="typeitf" value="typeitf">
-						<label for="typegpx"><b><i><u>ITF</u></i></b> (Pour l'application <a href="https://play.google.com/store/apps/details?id=com.sygic.aura">Sygic</a> pour Android, IPhone,...)</label>
+<!--						<input type=radio name="typeext" id="typeitf" value="typeitf">
+						<label for="typegpx"><b><i><u>ITF</u></i></b> (Pour l'application <a href="https://play.google.com/store/apps/details?id=com.sygic.aura">Sygic</a> pour Android, IPhone,...)</label>-->
 <!--						<input type=radio name="typeext" id="typeitf" value="typeitf">
 						<b><i><u>ITF</u></i></b> (Pour l'application <a href="">Sygic</a>)-->
 					</p>
