@@ -21,7 +21,7 @@ function GoogleMaps(del1step) {
         var rtevalue;
         var value;
     //  var urld=urldecode(url);
-        var tmp1=decodeURIComponent(url).replace("+"," ").split("data=");
+        var tmp1=decodeURIComponent(url).replace(/\+/g," ").split("data=");
         var tmp2=tmp1[1].split("?");
         var data=tmp2[0].split("!");
         data.push("3e0");
