@@ -102,7 +102,7 @@ function TypeGPX (tabs,myCaller) {
             this.msgError(terr);
         }
         var ret = "";
-        ret+='<?xml version="1.0" encoding="UTF-8" standalone="no" ?>' + "\n";
+        ret+='<?xml version="1.0" encoding="ISO-8859-1" standalone="no" ?>' + "\n";
         ret+='<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="gmap2xxx" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">' + "\n";
         //var st=this.tabres.length;
         //for (var i=0;i<st;i++)
