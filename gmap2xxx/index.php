@@ -1,3 +1,6 @@
+<?php 
+header('Content-Type: text/html; charset=utf-8');
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
@@ -5,6 +8,7 @@
 <link rel="stylesheet" href="../jquery/jquery-ui.min.css" />
 <link rel="stylesheet" href="./index.css" />
 	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta charset="UTF-8">
 	<meta type="keywords" content="google,maps,googlemaps,gps,tomtom,itn,gpx,conversion,convert,route" />
         <meta type="description" content="Transformez vos URL GoogleMaps en fichier pour un GPS." />
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -14,7 +18,7 @@
 <body>
     <?php include "../mysql/security.php"; ?>
     <div id="dialogs"></div>
-	<script type="text/javascript" src="./Loader.js?version=070"></script>
+	<script type="text/javascript" src="./Loader.js?version=071"></script>
 	<script type="text/javascript" src="../jquery/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
 <!--	<script type="text/javascript" src="./View.js"></script>
