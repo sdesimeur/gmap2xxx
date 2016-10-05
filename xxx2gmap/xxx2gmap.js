@@ -15,6 +15,7 @@ $( "#dialog" )
     .dialog( "open" );
 */
 
+var littleEndian=true;
 var nbetapes = 2;
 var debutetape = 1;
 var tabret = [];
@@ -82,51 +83,64 @@ function parseITNFile(filename) {
     reader.readAsText(filename);
 }
 
-function parseITFFile(filename) {
+function readString (dv,os,s) {
+    var tmp="";
+        for (var j=0;j<s;j++) {
+            tmp+=String.fromCharCode(dv.getUint16(os+2*j,littleEndian));
+        }
+    return tmp;
+}
+function parseITFFile(fname) {
     tabret[0] = [];
-    tabret[0].name='route';
+    tabret[0].name='';
     tabret[0].tab=[];
     var reader = new FileReader();
-    reader.onload = function(e) {
-    // browser completed reading file - display it
-        var content=e.target.result;
-        var buffer = reader.result;
+    reader.addEventListener("load", function(e) {
+        var obj = new Object();
+        var buffer=e.target.result;
         var dv = new DataView(buffer);
-    //var filetxt = reader.readAsDataURL(filename).result;
-        //var buffertmp = buffer.slice(10,12);
-        //var tmp = new Int8Array(buffer,10,2);
-        //var nbetapes = new Uint16Array(tmp);
-        //var nbetapes = new Uint16Array(buffer,10,2);
-        //var intdate = dv.getUint32(1);
-/*for (var i=0;i<buffer.length-4;i++) {
-        var nbetapes = new Int32Array(buffer,i,4);
-        if (parseInt(nbetapes[0]/100000) == 3) {
-            console.log(i);
-                   console.log(nbetapes[0]);
-        }
-}*/
-        //var date = dv.getInt32(0);
-        //var nothing = dv.getUint32(4);
-        //var lastVisited = dv.getInt16(8);
-        //console.log ("nb d'etapes visitees: "+lastVisited);
-        //var nbWpts = dv.getUint16(10);
-        //console.log ("nb d'etapes: "+nbWpts);
-        var littleEndian = (function() {
-          var buffer = new ArrayBuffer(2);
-            new DataView(buffer).setInt16(0, 256, true /* littleEndian */);
-              return new Int16Array(buffer)[0] === 256; // Int16Array utilise l'endianness de la plate-forme.
-              })();
-              console.log(littleEndian); // true ou false
         var tmp;
-        var tab = [];
-        for (var i=1;i<784;i+=2) {
-        tmp  = dv.getInt8(i,true);
-            console.log("valeur au byte "+i+" :"+tmp);
+        var i=0;
+        obj.vsize=dv.getUint16(i,littleEndian);
+        i+=2;
+        obj.vers=readString(dv,i,obj.vsize);
+        i+=2*obj.vsize;
+        obj.nsize=dv.getUint16(i,littleEndian);
+        i+=2;
+        obj.name=readString(dv,i,obj.nsize);
+        i+=2*obj.nsize;
+        obj.etapes = [];
+        var k=0;
+        var tmp;
+	    do {
+	        var d=0;
+	        tmp = new Object();
+	        tmp.tsize=dv.getUint16(i,littleEndian);
+	        tmp.tname=readString(dv,i+2,tmp.tsize);
+	        tmp.coordstart=new Object();
+	        d=12;
+	        tmp.coordstart.lon=dv.getUint32(i+d,littleEndian)/100000;
+	        tmp.coordstart.lat=dv.getUint32(i+d+4,littleEndian)/100000;
+	        tmp.coordend=new Object();
+	        d+=16;
+	        tmp.coordend.lon=dv.getUint32(i+d,littleEndian)/100000;
+	        tmp.coordend.lat=dv.getUint32(i+d+4,littleEndian)/100000;
+	        obj.etapes.push(tmp);
+	        i+=151;
+	    } while (i<dv.byteLength);
+        tabret[0].name = obj.name;
+        tabret[0].tab = [];
+        var value = obj.etapes[0];
+        tabret[0].tab[0] = [value.coordstart.lat , value.coordstart.lon];
+        var st = obj.etapes.length;
+        for (var key=0; key<st; key++) {
+            var value = obj.etapes[key];
+            tabret[0].tab[key+1] = [value.coordend.lat , value.coordend.lon];
         }
-        console.log ("numero etape 1:"+JSON.stringify(tab));
-        //majRouteSelect();
-    };
-    reader.readAsArrayBuffer(filename);
+        majRouteSelect();
+    });
+    reader.readAsArrayBuffer(fname);
+
 }
 
 function parseMyFile () {
