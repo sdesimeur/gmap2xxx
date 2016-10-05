@@ -1,7 +1,0 @@
-<Directory /kunden/homepages/33/d152137012/htdocs/sdesimeur_com/gmap_xxx/Stats/>
-AuthType Basic
-AuthName "Saisissez vos identifants"
-AuthUserFile /kunden/homepages/33/d152137012/htdocs/.pass/.htpasswd
-Require user admin
-</Directory>
-
