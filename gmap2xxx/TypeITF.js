@@ -51,12 +51,12 @@ function TypeITF (tabs,myCaller) {
                 var lng = parseInt(val2.lng*100000);
                 var lat = parseInt(val2.lat*100000);
                 if (i<obj.nbetapes-1) {
-                    dv.setUint16(etape1offset+i*uneEtapeLength+lonstartoffset,lng,this.littleEndian);
-                    dv.setUint16(etape1offset+i*uneEtapeLength+lonstartoffset+deltalon,lat,this.littleEndian);
+                    dv.setUint32(etape1offset+i*uneEtapeLength+lonstartoffset,lng,this.littleEndian);
+                    dv.setUint32(etape1offset+i*uneEtapeLength+lonstartoffset+deltalon,lat,this.littleEndian);
                 }
                 if (i>0) {
-                    dv.setUint16(etape1offset+(i-1)*uneEtapeLength+lonendoffset,lng,this.littleEndian);
-                    dv.setUint16(etape1offset+(i-1)*uneEtapeLength+lonendoffset+deltalon,lat,this.littleEndian);
+                    dv.setUint32(etape1offset+(i-1)*uneEtapeLength+lonendoffset,lng,this.littleEndian);
+                    dv.setUint32(etape1offset+(i-1)*uneEtapeLength+lonendoffset+deltalon,lat,this.littleEndian);
                 }
                 i++;
             }
