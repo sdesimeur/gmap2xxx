@@ -127,7 +127,7 @@ function parseITFFile(fname) {
 	        tmp.coordend.lat=dv.getUint32(i+d+4,littleEndian)/100000;
 	        obj.etapes.push(tmp);
 	        i+=151;
-	    } while (i<dv.byteLength);
+	    } while (i<dv.byteLength-1);
         tabret[0].name = obj.name;
         tabret[0].tab = [];
         var value = obj.etapes[0];
