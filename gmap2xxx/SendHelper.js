@@ -119,7 +119,7 @@ function SendHelper (myCaller) {
         if(supportsDownloadAttribute) {
             link = $('<a>Votre fichier</a>');
             link.attr({
-                href: 'data:attachment/csv;base64,' + encodeURI(btoa(content)),
+                href: 'data:attachment/csv;base64,' + Base64.encode(content),
                 target: '_blank',
                 download: filename
             })[0];
