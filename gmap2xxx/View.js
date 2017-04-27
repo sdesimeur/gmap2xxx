@@ -128,13 +128,17 @@ function View () {
             }
             var testGoogle = /^(http)?s?:?\/?\/?www\.google\.[a-z]*\/maps\/dir\//i.test(tempurlval);
             var testBing = /^(http)?s?:?\/?\/?www\.bing\.[a-z]*\/maps/i.test(tempurlval);
+            var testYourNavigation = /^(http)?s?:?\/?\/?www\.yournavigation\.org/i.test(tempurlval);
             if (testGoogle) {
                 temp = new GoogleMaps(tempdel1step);
             }
             if (testBing) {
                 temp = new BingMaps(tempdel1step);
             }
-            if (testBing || testGoogle) {
+            if (testYourNavigation) {
+                temp = new YourNavigation(tempdel1step);
+            }
+            if (testBing || testGoogle || testYourNavigation) {
                 this.vars.addUrl({
                     url: tempurlval,
                     supr: tempdel1step
@@ -254,6 +258,7 @@ function View () {
 $(document).ready(function () { 
     var view = new View();
     document.body.innerHTML=document.body.innerHTML.replace(/###GMAPLNK###/g,'<a href="https://www.google.fr/maps/dir/" target="_blank">GoogleMaps</a>');
+    document.body.innerHTML=document.body.innerHTML.replace(/###YNLNK###/g,'<a href="http://www.yournavigation.org/" target="_blank">YourNavigation</a>');
     document.body.innerHTML=document.body.innerHTML.replace(/###BMAPLNK###/g,'<a href="https://www.bing.com/mapspreview" target="_blank">BingMaps</a>');
     view.loadall();
     

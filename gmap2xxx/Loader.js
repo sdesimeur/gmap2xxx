@@ -8,6 +8,7 @@ var javaScriptFiles = [
     "./Point.js",
     "./MyCookies.js",
     "./GoogleMaps.js",
+    "./YourNavigation.js",
     "./BingMaps.js",
     "./polyline.js",
     "./JSONHelper.js",

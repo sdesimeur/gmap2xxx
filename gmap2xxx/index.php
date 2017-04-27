@@ -44,7 +44,7 @@ header('Content-Type: text/html; charset=utf-8');
 					</form>
 				</td>
 			</tr></table>
-			<table class="titre_principal mepg"><tr><td><h2>Conversion d&rsquo;une URL<br/>###GMAPLNK### ou ###BMAPLNK###<br/>en fichier ITN pour Tomtom<br/>ou en fichier GPX</h2></td></tr></table>
+			<table class="titre_principal mepg"><tr><td><h2>Conversion d&rsquo;une URL<br/>###GMAPLNK### ou ###BMAPLNK### ou ###YNLNK###<br/>en fichier ITN pour Tomtom<br/>ou en fichier GPX</h2></td></tr></table>
 		</td>
 		<td class="cote" id="droite">
 				<h2>Facebook</h2>
