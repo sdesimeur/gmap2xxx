@@ -119,7 +119,7 @@ header('Content-Type: text/html; charset=utf-8');
 				<tr>
 					<td class="gris">
 						<h1>ATTENTION</h1>
-						<h2>Vous devez utiliser la nouvelle interface de ###GMAPLNK###<br> &nbsp;&nbsp;&nbsp;ou l'interface ###BMAPLNK###.<br>
+						<h2>Vous devez utiliser la nouvelle interface de ###GMAPLNK###<br> &nbsp;&nbsp;&nbsp;ou l'interface ###BMAPLNK###,<br> &nbsp;&nbsp;&nbsp;ou l'interface ###YNLNK###.<br>
 						</h2>
 						<ul id="zoneallurls">
 							<li>
