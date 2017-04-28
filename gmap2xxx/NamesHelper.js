@@ -19,7 +19,7 @@ function NamesHelper (tab2add,myCaller) {
         $.ajax({
             method: "POST",
             url: "loadurlpage.php",
-            data: { url: Base64.encode(url1), keyok: "0", token: $('#token').val(), IP: $('#IP').val() },
+            data: { url: Base64.encode(url1), key: "0", token: $('#token').val(), IP: $('#IP').val() },
             success:function (data) {
                 return this.gotPage(data);
                 }.bind(this),

@@ -3,6 +3,11 @@ function View () {
     this.itnMsgMoreThan2Urls = false;
     this.vars = new Vars();
     this.myCookies = new MyCookies(this.vars);
+    this.mapObjects = [
+        { regExp: /^(http)?s?:?\/?\/?www\.google\.[a-z]*\/maps\/dir\//i, mapObj: GoogleMaps },
+        {regExp: /^(http)?s?:?\/?\/?www\.bing\.[a-z]*\/maps/i, mapObj: BingMaps },
+        {regExp: /^(http)?s?:?\/?\/?www\.yournavigation\.org/i, mapObj: YourNavigation }
+    ];
     var sizeurls=60;
     
     var itninfotxt='';
@@ -126,19 +131,32 @@ function View () {
             if (testGoogleShort) {
                 break;
             }
+            var testOk=false;
+            /*
             var testGoogle = /^(http)?s?:?\/?\/?www\.google\.[a-z]*\/maps\/dir\//i.test(tempurlval);
             var testBing = /^(http)?s?:?\/?\/?www\.bing\.[a-z]*\/maps/i.test(tempurlval);
             var testYourNavigation = /^(http)?s?:?\/?\/?www\.yournavigation\.org/i.test(tempurlval);
             if (testGoogle) {
                 temp = new GoogleMaps(tempdel1step);
+                testOk=true;
             }
             if (testBing) {
                 temp = new BingMaps(tempdel1step);
             }
             if (testYourNavigation) {
                 temp = new YourNavigation(tempdel1step);
+                testOk=true;
             }
-            if (testBing || testGoogle || testYourNavigation) {
+            */
+            for (var i=0; i<this.mapObjects.length; i++) {
+                var testMapObj = this.mapObjects[i].regExp.test(tempurlval);
+                if (testMapObj) {
+                    temp = new this.mapObjects[i].mapObj(tempdel1step);
+                    testOk=true;
+                }
+            }
+
+            if (testOk) {
                 this.vars.addUrl({
                     url: tempurlval,
                     supr: tempdel1step

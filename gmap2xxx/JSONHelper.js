@@ -12,7 +12,7 @@ function JSONHelper (myCaller,indice,inddest) {
         $.ajax({
             method: "POST",
             url: "loadurlpage.php",
-            data: { url: Base64.encode(url), keyok: "1", token: $('#token').val(), IP: $('#IP').val() },
+            data: { url: Base64.encode(url), key: "1", token: $('#token').val(), IP: $('#IP').val() },
             success: function (data) {
                 this.myCaller.jsonroad[this.inddest]=data;
                 this.myCaller.incrTabReady();

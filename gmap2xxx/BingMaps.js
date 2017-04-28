@@ -21,7 +21,8 @@ function BingMaps(del1step) {
     this.url2tab = function(url) {
         $.ajax({
             method: "POST",
-            url: url,
+            url: "loadurlpage.php",
+            data: { url: Base64.encode(url), key: "2", token: $('#token').val(), IP: $('#IP').val() },
             success:function (data) {
                 //console.log(JSON.stringify(data));
                 return this.gotPage(data);
@@ -36,7 +37,7 @@ function BingMaps(del1step) {
 
     this.gotPage = function (page) {
         var tmp0=page.split(/[\n\r]/).join("").split(/sharedStates\.push\s*\(\s*/);
-        var tmp1=tmp0[0].split(/\s*\)\s*;\s*;/);
+        var tmp1=tmp0[1].split(/\s*\)\s*;\s*;/);
         var tmp2=tmp1[0].split("\\\\\\").join("");
         var tmp3=JSON.parse(tmp2);
         var tmp;
