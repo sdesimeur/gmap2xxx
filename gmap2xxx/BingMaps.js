@@ -19,11 +19,28 @@ function BingMaps(del1step) {
     }
 
     this.url2tab = function(url) {
-        var tmp0=url.split("#");
+        $.ajax({
+            method: "POST",
+            url: url,
+            success:function (data) {
+                return this.gotPage(data);
+                }.bind(this),
+            error: function(msg) {
+                console.log(JSON.stringify(msg));
+                new Dialog("othererr").affiche("Erreur","<p>Une erreur s'est produite dans le traitement d'une URL BingMap0",false);
+                return false;
+                }.bind(this)
+            });
+    }
+
+    this.gotPage = function (page) {
+        var tmp0=page.split(/[\n\r]/).join("").split(/sharedStates\.push\s*(\s*/);
+        var tmp1=tmp0[0].split(/\s*)\s*;\s*;/)
+        var tmp2=tmp1[0].split("\\\\\\").join("");
+
         var tmp;
-        if (tmp0.length > 1) {
-            tmp=Base64.decode(tmp0[1]);
-        }
+        
+        /*
         tmp0=url.split("?");
         if (tmp0.length > 1) 
             tmp=tmp0[1];
@@ -48,6 +65,7 @@ function BingMaps(del1step) {
             var wpt=new Point (tmp3[2],tmp3[0],tmp3[1]);
             this.tabwpts.push(wpt);
         }
+        */
         if (this.del1step) {
             this.tabwpts.shift();
         }
