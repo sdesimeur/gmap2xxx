@@ -37,7 +37,7 @@ function BingMaps(del1step) {
         var tmp0=page.split(/[\n\r]/).join("").split(/sharedStates\.push\s*(\s*/);
         var tmp1=tmp0[0].split(/\s*)\s*;\s*;/)
         var tmp2=tmp1[0].split("\\\\\\").join("");
-
+        var tmp3=JSON.parse(tmp2);
         var tmp;
         
         /*
