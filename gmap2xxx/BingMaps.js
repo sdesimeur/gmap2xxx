@@ -47,12 +47,12 @@ function BingMaps(del1step,url,namesHelper) {
                 var wpts = state.waypoints;
                 for (var wptnb=0; wptnb<wpts.length; wptnb++) {
                     var wpt=wpts[wptnb];
-                    var wpttmp=new Point (wpt.address,wpt.point.latitude,wpt.point.longitude);
+                    var wpttmp=new Point (wpt.address|"",wpt.point.latitude,wpt.point.longitude);
                     this.tabwpts.push(wpttmp);
                     var wptsvia=wpt.viaWaypoints;
                     for (var wptvianb=0; wptvianb<wptsvia.length; wptvianb++) {
                         var wpt=wptsvia[wptvianb];
-                        var wpttmp=new Point (wpt.name,wpt.point.latitude,wpt.point.longitude);
+                        var wpttmp=new Point (wpt.address||"",wpt.point.latitude,wpt.point.longitude);
                         this.tabwpts.push(wpttmp);
                     }
                 }
