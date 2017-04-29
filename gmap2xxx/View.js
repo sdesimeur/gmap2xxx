@@ -4,8 +4,9 @@ function View () {
     this.vars = new Vars();
     this.myCookies = new MyCookies(this.vars);
     this.mapObjects = [
-        { regExp: /^(http)?s?:?\/?\/?www\.google\.[a-z]*\/maps\/dir\//i, mapObj: GoogleMaps },
-        {regExp: /^(http)?s?:?\/?\/?www\.bing\.[a-z]*\/maps/i, mapObj: BingMaps },
+        {regExp: /^(http)?s?:?\/?\/?www\.google\.[a-z]*\/maps\/dir\//i, mapObj: GoogleMaps },
+        {regExp: /^(http)?s?:?\/?\/?(www\.bing\.[a-z]*\/maps|binged\.[a-z]*\/)/i, mapObj: BingMaps },
+        {regExp: /^(http)?s?:?\/?\/?www\.viamichelin\.[a-z]*\/web\/Itineraires/i, mapObj: ViaMichelin },
         {regExp: /^(http)?s?:?\/?\/?www\.yournavigation\.org/i, mapObj: YourNavigation }
     ];
     var sizeurls=60;
@@ -118,24 +119,24 @@ function View () {
         var testGoogleShort = false;
         var error = false;
         var nourl = true;
-        var i=0;
+        var idxUrl=0;
         var tabUrls = [];
         var sendHelper = new SendHelper (this);
         var twpts = new AllTabWpts (sendHelper);
         var namesHelper=new NamesHelper (twpts);
         do {
-            var tempurl=$('#url'+i);
-            var tempdel1step=$('#del1step'+i).is(":checked");
+            var tempurl=$('#url'+idxUrl);
+            var tempdel1step=$('#del1step'+idxUrl).is(":checked");
             var tempurlval = tempurl.val();
             testGoogleShort = /^(http)?s?:?\/?\/goo\.gl\//i.test(tempurlval);
             if (testGoogleShort) {
                 break;
             }
             var testOk=false;
-            for (var i=0; i<this.mapObjects.length; i++) {
-                var testMapObj = this.mapObjects[i].regExp.test(tempurlval);
+            for (var idxMapObjs=0; idxMapObjs<this.mapObjects.length; idxMapObjs++) {
+                var testMapObj = this.mapObjects[idxMapObjs].regExp.test(tempurlval);
                 if (testMapObj) {
-                    var temp = new this.mapObjects[i].mapObj(tempdel1step,tempurlval,namesHelper);
+                    var temp = new this.mapObjects[idxMapObjs].mapObj(tempdel1step,tempurlval,namesHelper);
                     twpts.addTab(temp);
                     temp.run();
                     testOk=true;
@@ -148,7 +149,7 @@ function View () {
                     supr: tempdel1step
                 });
                 nourl = false;
-                tabUrls[i] = {
+                tabUrls[idxUrl] = {
                     url : tempurlval,
                     del1step : tempdel1step,
                     errorjson : false,
@@ -158,18 +159,18 @@ function View () {
                 error = true;
                 break;
             }
-            i++;
+            idxUrl++;
         } while (tempurl.length>0);
         if (error) {
-            $('#url'+i).focus();
-            new Dialog("erreur").affiche('Erreur de saisie',"<p>l'URL n°"+(i+1)+" est erron&eacute;e</p>",false);
+            $('#url'+idxUrl).focus();
+            new Dialog("erreur").affiche('Erreur de saisie',"<p>l'URL n°"+(idxUrl+1)+" est erron&eacute;e</p>",false);
             return false;
         } else if ( nourl ) {
             new Dialog("erreur").affiche('Erreur de saisie','<p>Vous devez entrer une URL</p>',false);
             $('#url0').focus();
             return false;
         } else if (testGoogleShort) {
-            $('#url'+i).focus();
+            $('#url'+idxUrl).focus();
             new Dialog("erreur").affiche('Erreur de saisie','<p>Vous devez entrer une URL longue, et pas une URL r&eacute;duite</p>',false);
             return false;
         } else {

@@ -41,6 +41,7 @@ function NamesHelper (myCaller) {
         for (var i=0;i<st1;i++) {      
             var val = this.maptab.tabwpts[i];
             var name = val.name;
+            name = (name==undefined)?"":name;
             if ( name.length<5 ) {
                 var reg = new RegExp(  (parseInt(val.lat*10000)/10000) + '[0-9]*\\s*,\\s*' + (parseInt(val.lng*10000)/10000) + '[0-9]*\\s*\\]\\s*,\\s*"([^"]*)"' );
                 if (reg.test(page)) {
