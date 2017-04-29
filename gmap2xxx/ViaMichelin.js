@@ -36,26 +36,16 @@ function ViaMichelin(del1step,url,namesHelper) {
         var tmp0=page.split(/[\n\r]/).join("").split(/t\.bootstrapData\s*\(\s*\{/);
         var tmp1=tmp0[1].split(/\}\s*\)\s*,t\.start\s*\(\s*\)\s*/);
         var tmp3=JSON.parse("{"+tmp1[0]+"}");
-        var stacks=tmp3.data.data.stacks;
-        for (var stacknb=0; stacknb<stacks.length; stacknb++) {
-            var tasks = stacks[stacknb].tasks;
-            for (var tasknb=0; tasknb<tasks.length; tasknb++) {
-                var state = tasks[tasknb].state;
-                this.options.autoroute=!(state.options.avoidHighways);
-                this.options.peage=!(state.options.avoidTollRoads);
-                var wpts = state.waypoints;
-                for (var wptnb=0; wptnb<wpts.length; wptnb++) {
+        var data=tmp3.model.data;
+        var opts=data.options;
+        this.options.autoroute=opts.highway;
+        this.options.peage=opts.toll;
+        var wpts = data.steps;
+        for (var wptnb=0; wptnb<wpts.length; wptnb++) {
                     var wpt=wpts[wptnb];
-                    var wpttmp=new Point (wpt.address,wpt.point.latitude,wpt.point.longitude);
+                    var coords=wpt.location.coords;
+                    var wpttmp=new Point (wpt.text,coords.lat,coords.lon);
                     this.tabwpts.push(wpttmp);
-                    var wptsvia=wpt.viaWaypoints;
-                    for (var wptvianb=0; wptvianb<wptsvia.length; wptvianb++) {
-                        var wpt=wptsvia[wptvianb];
-                        var wpttmp=new Point (wpt.address,wpt.point.latitude,wpt.point.longitude);
-                        this.tabwpts.push(wpttmp);
-                    }
-                }
-            }
         }
         
         /*
