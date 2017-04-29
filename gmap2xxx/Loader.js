@@ -10,6 +10,7 @@ var javaScriptFiles = [
     "./GoogleMaps.js",
     "./YourNavigation.js",
     "./BingMaps.js",
+    "./ViaMichelin.js",
     "./polyline.js",
     "./JSONHelper.js",
     "./SendHelper.js",

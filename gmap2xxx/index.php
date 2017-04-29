@@ -44,7 +44,7 @@ header('Content-Type: text/html; charset=utf-8');
 					</form>
 				</td>
 			</tr></table>
-			<table class="titre_principal mepg"><tr><td><h2>Conversion d&rsquo;une URL<br/>###GMAPLNK### ou ###BMAPLNK### ou ###YNLNK###<br/>en fichier ITN pour Tomtom<br/>ou en fichier GPX</h2></td></tr></table>
+			<table class="titre_principal mepg"><tr><td><h2>Conversion d&rsquo;une URL<br/>###GMAPLNK### ou ###BMAPLNK### ou ###YNLNK### ou ###VIAMICHELIN###<br/>en fichier ITN pour Tomtom<br/>ou en fichier GPX</h2></td></tr></table>
 		</td>
 		<td class="cote" id="droite">
 				<h2>Facebook</h2>
@@ -119,12 +119,15 @@ header('Content-Type: text/html; charset=utf-8');
 				<tr>
 					<td class="gris">
 						<h1>ATTENTION</h1>
-						<h2>Vous devez utiliser la nouvelle interface de ###GMAPLNK###<br> &nbsp;&nbsp;&nbsp;ou l'interface ###BMAPLNK###,<br> &nbsp;&nbsp;&nbsp;ou l'interface ###YNLNK###.<br>
+						<h2>Vous devez utiliser la nouvelle interface de ###GMAPLNK###<br>
+                        &nbsp;&nbsp;&nbsp;ou l'interface ###BMAPLNK###,<br>
+                        &nbsp;&nbsp;&nbsp;ou l'interface ###VIAMICHELIN###,<br>
+                        &nbsp;&nbsp;&nbsp;ou l'interface ###YNLNK###.<br>
 						</h2>
 						<ul id="zoneallurls">
 							<li>
 								<fieldset>
-									<label for="url0"><span id="txturl0">Entrez une URL</span> obtenue dans ###GMAPLNK### ou dans ###BMAPLNK### (Lisez les <a href="#remarques">remarques</a> ci-dessous):</label><br/>
+									<label for="url0"><span id="txturl0">Entrez une URL</span> obtenue dans ###GMAPLNK### ou dans ###BMAPLNK### ou dans ###VIAMICHELIN### ou dans ###YNLNK### (Lisez les <a href="#remarques">remarques</a> ci-dessous):</label><br/>
 									<input name="url[]" id="url0" type="text" class="url">
 									&nbsp;<button id="razurl0" value="razurl" type="button" class="razurl">Remise à zéro de l'URL</button><br/>
 									<label for="del1step0">Si vous souhaitez supprimer la premi&egrave;re &eacute;tape pour cette URL, cochez la case suivante:</label>
@@ -201,9 +204,9 @@ header('Content-Type: text/html; charset=utf-8');
 		Remarque:
 	</a></h4>
 	Il n&rsquo;y a aucune garantie du r&eacute;sultat, car votre GPS n'a pas le m&ecirc;me moteur de calcul que 
-	###GMAPLNK### et que ###BMAPLNK###.
+	###GMAPLNK###, que ###BMAPLNK###, que ###VIAMICHELIN### et que ###YNLNK###.
 	<br/>
-	La seule garantie est de cr&eacute;er un itin&eacute;raire qui passera par les points que vous avez indiqu&eacute;s lors de la création de votre itinéraire sous ###GMAPLNK### ou sous ###BMAPLNK###.
+	La seule garantie est de cr&eacute;er un itin&eacute;raire qui passera par les points que vous avez indiqu&eacute;s lors de la création de votre itinéraire sous ###GMAPLNK###, ou sous ###BMAPLNK###, ou sous ###VIAMICHELIN###, ou sous ###YNLNK###.
 	<br/>
 </td></tr>
 <tr><td class="conseils">
