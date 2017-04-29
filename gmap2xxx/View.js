@@ -263,7 +263,7 @@ $(document).ready(function () {
     document.body.innerHTML=document.body.innerHTML.replace(/###GMAPLNK###/g,'<a href="https://www.google.fr/maps/dir/" target="_blank">GoogleMaps</a>');
     document.body.innerHTML=document.body.innerHTML.replace(/###YNLNK###/g,'<a href="http://www.yournavigation.org/" target="_blank">YourNavigation</a>');
     document.body.innerHTML=document.body.innerHTML.replace(/###BMAPLNK###/g,'<a href="https://www.bing.com/mapspreview" target="_blank">BingMaps</a>');
-    document.body.innerHTML=document.body.innerHTML.replace(/###VIAMICHELIN###/g,'<a href="https://www.viamichelin.fr/web/Itineraires" target="_blank">BingMaps</a>');
+    document.body.innerHTML=document.body.innerHTML.replace(/###VIAMICHELIN###/g,'<a href="https://www.viamichelin.fr/web/Itineraires" target="_blank">ViaMichelin</a>');
     view.loadall();
     
     var tmp = view.myCookies.getCookie('URLS');
