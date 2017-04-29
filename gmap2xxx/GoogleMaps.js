@@ -1,7 +1,8 @@
 "use strict";
 
-function GoogleMaps(del1step) {
-    this.url="";
+function GoogleMaps(del1step,url,namesHelper) {
+    this.namesHelper=namesHelper;
+    this.url=url;
     this.del1step=del1step;
     this.tabwpts = [];
     this.options = [];
@@ -10,18 +11,14 @@ function GoogleMaps(del1step) {
         peage: true
     };
 
-    this.addUrl = function(url) {
-        this.url=url;
-        this.url2tab(url);
-    }
 
-    this.url2tab = function(url) {
+    this.url2tab = function() {
         var last="";
         var newvalue;
         var rtevalue;
         var value;
     //  var urld=urldecode(url);
-        var tmp1=decodeURIComponent(url).replace(/\+/g," ").split("data=");
+        var tmp1=decodeURIComponent(this.url).replace(/\+/g," ").split("data=");
         var tmp2=tmp1[1].split("?");
         var data=tmp2[0].split("!");
         data.push("3e0");
@@ -113,6 +110,11 @@ function GoogleMaps(del1step) {
         if (this.del1step) {
             this.tabwpts.shift();
         }
+        this.namesHelper.tabwithname(this);
+    }
+    
+    this.run = function () {
+        this.url2tab();
     }
 }
 

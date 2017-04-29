@@ -1,8 +1,10 @@
 "use strict";
 
-function BingMaps(del1step) {
+function BingMaps(del1step,url,namesHelper) {
+    this.namesHelper=namesHelper;
     this.del1step=del1step;
-    this.url = "";
+    this.isDone=false;
+    this.url = url;
     this.tabwpts = [];
     this.options = [];
     this.options = {
@@ -13,16 +15,11 @@ function BingMaps(del1step) {
 //tolls contain av=8
 //highways+tolls contain av=12
 
-    this.addUrl = function(url) {
-        this.url=url;
-        this.url2tab(url);
-    }
-
-    this.url2tab = function(url) {
+    this.url2tab = function() {
         $.ajax({
             method: "POST",
             url: "loadurlpage.php",
-            data: { url: Base64.encode(url), key: "2", token: $('#token').val(), IP: $('#IP').val() },
+            data: { url: Base64.encode(this.url), key: "2", token: $('#token').val(), IP: $('#IP').val() },
             success:function (data) {
                 //console.log(JSON.stringify(data));
                 return this.gotPage(data);
@@ -38,9 +35,29 @@ function BingMaps(del1step) {
     this.gotPage = function (page) {
         var tmp0=page.split(/[\n\r]/).join("").split(/sharedStates\.push\s*\(\s*/);
         var tmp1=tmp0[1].split(/\s*\)\s*;\s*;/);
-        var tmp2=tmp1[0].split("\\\\\\").join("").replace(/\\"/g,'"').replace(/"\{/g,"{")..replace(/\}"/g,"}");
+        var tmp2=tmp1[0].split("\\\\\\").join("").replace(/\\"/g,'"').replace(/"\{/g,"{").replace(/\}"/g,"}");
         var tmp3=JSON.parse(tmp2);
-        var tmp;
+        var stacks=tmp3.data.data.stacks;
+        for (var stacknb=0; stacknb<stacks.length; stacknb++) {
+            var tasks = stacks[stacknb].tasks;
+            for (var tasknb=0; tasknb<tasks.length; tasknb++) {
+                var state = tasks[tasknb].state;
+                this.options.autoroute=!(state.options.avoidHighways);
+                this.options.peage=!(state.options.avoidTollRoads);
+                var wpts = state.waypoints;
+                for (var wptnb=0; wptnb<wpts.length; wptnb++) {
+                    var wpt=wpts[wptnb];
+                    var wpttmp=new Point (wpt.name,wpt.point.latitude,wpt.point.longitude);
+                    this.tabwpts.push(wpttmp);
+                    var wptsvia=wpt.viaWaypoints;
+                    for (var wptvianb=0; wptvianb<wptsvia.length; wptvianb++) {
+                        var wpt=wptsvia[wptvianb];
+                        var wpttmp=new Point (wpt.name,wpt.point.latitude,wpt.point.longitude);
+                        this.tabwpts.push(wpttmp);
+                    }
+                }
+            }
+        }
         
         /*
         tmp0=url.split("?");
@@ -71,6 +88,10 @@ function BingMaps(del1step) {
         if (this.del1step) {
             this.tabwpts.shift();
         }
+        this.namesHelper.tabwithname(this);
+    }
+    this.run = function () {
+        this.url2tab();
     }
 }
 

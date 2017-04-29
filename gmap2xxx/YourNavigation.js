@@ -1,7 +1,9 @@
 "use strict";
 
-function YourNavigation(del1step) {
-    this.url="";
+function YourNavigation(del1step,url,namesHelper) {
+    this.namesHelper=namesHelper;
+    this.url=url;
+    this.isDone=false;
     this.del1step=del1step;
     this.tabwpts = [];
     this.options = [];
@@ -10,17 +12,12 @@ function YourNavigation(del1step) {
         peage: true
     };
 
-    this.addUrl = function(url) {
-        this.url=url;
-        this.url2tab(url);
-    }
-
-    this.url2tab = function(url) {
+    this.url2tab = function() {
         var last="";
         var newvalue;
         var rtevalue;
         var value;
-        var tmp1=decodeURIComponent(url).split("?");
+        var tmp1=decodeURIComponent(this.url).split("?");
         var data=tmp1[1].split("&");
         var lastwpt;
         
@@ -59,6 +56,11 @@ function YourNavigation(del1step) {
         if (this.del1step) {
             this.tabwpts.shift();
         }
+        this.namesHelper.tabwithname(this);
+    }
+
+    this.run = function () {
+        this.url2tab();
     }
 }
 

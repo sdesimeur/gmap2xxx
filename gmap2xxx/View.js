@@ -122,36 +122,22 @@ function View () {
         var tabUrls = [];
         var sendHelper = new SendHelper (this);
         var twpts = new AllTabWpts (sendHelper);
+        var namesHelper=new NamesHelper (twpts);
         do {
             var tempurl=$('#url'+i);
             var tempdel1step=$('#del1step'+i).is(":checked");
             var tempurlval = tempurl.val();
-            var temp;
             testGoogleShort = /^(http)?s?:?\/?\/goo\.gl\//i.test(tempurlval);
             if (testGoogleShort) {
                 break;
             }
             var testOk=false;
-            /*
-            var testGoogle = /^(http)?s?:?\/?\/?www\.google\.[a-z]*\/maps\/dir\//i.test(tempurlval);
-            var testBing = /^(http)?s?:?\/?\/?www\.bing\.[a-z]*\/maps/i.test(tempurlval);
-            var testYourNavigation = /^(http)?s?:?\/?\/?www\.yournavigation\.org/i.test(tempurlval);
-            if (testGoogle) {
-                temp = new GoogleMaps(tempdel1step);
-                testOk=true;
-            }
-            if (testBing) {
-                temp = new BingMaps(tempdel1step);
-            }
-            if (testYourNavigation) {
-                temp = new YourNavigation(tempdel1step);
-                testOk=true;
-            }
-            */
             for (var i=0; i<this.mapObjects.length; i++) {
                 var testMapObj = this.mapObjects[i].regExp.test(tempurlval);
                 if (testMapObj) {
-                    temp = new this.mapObjects[i].mapObj(tempdel1step);
+                    var temp = new this.mapObjects[i].mapObj(tempdel1step,tempurlval,namesHelper);
+                    twpts.addTab(temp);
+                    temp.run();
                     testOk=true;
                 }
             }
@@ -162,8 +148,6 @@ function View () {
                     supr: tempdel1step
                 });
                 nourl = false;
-                temp.addUrl(tempurlval);
-                twpts.addTab(new NamesHelper (temp,twpts));
                 tabUrls[i] = {
                     url : tempurlval,
                     del1step : tempdel1step,
