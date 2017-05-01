@@ -33,9 +33,9 @@ function BingMaps(del1step,url,namesHelper) {
     }
 
     this.gotPage = function (page) {
-        var tmp0=page.split(/[\n\r]/).join("").split(/sharedStates\.push\s*\(\s*/);
+        var tmp0=page.replace(/[\n\r]/g,'').split(/sharedStates\.push\s*\(\s*/);
         var tmp1=tmp0[1].split(/\s*\)\s*;\s*;/);
-        var tmp2=tmp1[0].split("\\\\\\").join("").replace(/\\"/g,'"').replace(/"\{/g,"{").replace(/\}"/g,"}");
+        var tmp2=tmp1[0].replace(/\\"/g,'"').replace(/\\\\"/g,'"').replace(/\\\\"/g,"'").replace(/"\{/g,"{").replace(/\}"/g,"}");
         var tmp3=JSON.parse(tmp2);
         var stacks=tmp3.data.data.stacks;
         for (var stacknb=0; stacknb<stacks.length; stacknb++) {
