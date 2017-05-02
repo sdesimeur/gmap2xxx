@@ -268,7 +268,7 @@ $(document).ready(function () {
     
     var tmp = view.myCookies.getCookie('URLS');
     if (tmp != null) {
-        var tmp1=JSON.parse(Base64.decode(tmp));
+        var tmp1=JSON.parse(atob(tmp));
         var st = tmp1.length;
         for (var i=0;i<st;i++) {
             $('#url'+i).val(tmp1[i].url);

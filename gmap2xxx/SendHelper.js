@@ -82,7 +82,7 @@ function SendHelper (myCaller) {
             //temp+ = '<a id="tempanchor"';
             //temp+=' download="'+fname+'"';
             //temp+=' target="_blank"';
-            //temp+= ' href="data:text/plain;charset=utf-8;base64,' + Base64.encode(data) +'">';
+            //temp+= ' href="data:text/plain;charset=utf-8;base64,' + btoa(data) +'">';
             //temp+= fname + '</a>.';
             temp += link.outerHTML;
             new Dialog("fichier").affiche("Téléchargez votre fichier", temp,false);
@@ -99,7 +99,7 @@ function SendHelper (myCaller) {
         $.ajax({
             method: "POST",
             url: "mymailfile.php",
-            data: { ename: Base64.encode(this.vars.ename), data: Base64.encode(data), fname:Base64.encode(fname), token: $('#token').val(), IP: $('#IP').val() },
+            data: { ename: btoa(this.vars.ename), data: btoa(data), fname:btoa(fname), token: $('#token').val(), IP: $('#IP').val() },
             success : function( msg ) {
                 new Dialog("mail").affiche("Envoi d'EMail",msg,false);
             }.bind(this),
@@ -119,7 +119,6 @@ function SendHelper (myCaller) {
         if(supportsDownloadAttribute) {
             link = $('<a>Votre fichier</a>');
             link.attr({
-                //href: 'data:attachment/csv;base64,' + Base64.encode(content),
                 href: 'data:attachment/csv;base64,' + encodeURI(btoa(content)),
                 target: '_blank',
                 download: filename
