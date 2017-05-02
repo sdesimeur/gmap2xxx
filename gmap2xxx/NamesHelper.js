@@ -19,7 +19,7 @@ function NamesHelper (myCaller) {
         $.ajax({
             method: "POST",
             url: "loadurlpage.php",
-            data: { url: btoa(url1), key: "0", token: $('#token').val(), IP: $('#IP').val() },
+            data: { url: window.btoa(unescape(encodeURIComponent(url1))), key: "0", token: $('#token').val(), IP: $('#IP').val() },
             success:function (data) {
                 return this.gotPage(data);
                 }.bind(this),

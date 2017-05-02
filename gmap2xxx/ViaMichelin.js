@@ -19,7 +19,7 @@ function ViaMichelin(del1step,url,namesHelper) {
         $.ajax({
             method: "POST",
             url: "loadurlpage.php",
-            data: { url: btoa(this.url), key: "2", token: $('#token').val(), IP: $('#IP').val() },
+            data: { url: window.btoa(unescape(encodeURIComponent(this.url))), key: "2", token: $('#token').val(), IP: $('#IP').val() },
             success:function (data) {
                 //console.log(JSON.stringify(data));
                 return this.gotPage(data);
