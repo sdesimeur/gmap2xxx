@@ -82,7 +82,7 @@ function SendHelper (myCaller) {
             //temp+ = '<a id="tempanchor"';
             //temp+=' download="'+fname+'"';
             //temp+=' target="_blank"';
-            //temp+= ' href="data:text/plain;charset=utf-8;base64,' + Utils.base64(data) +'">';
+            //temp+= ' href="data:text/plain;charset=utf-8;base64,' + utils.base64(data) +'">';
             //temp+= fname + '</a>.';
             temp += link.outerHTML;
             new Dialog("fichier").affiche("Téléchargez votre fichier", temp,false);
@@ -99,7 +99,7 @@ function SendHelper (myCaller) {
         $.ajax({
             method: "POST",
             url: "mymailfile.php",
-            data: { ename: Utils.base64(this.vars.ename), data: Utils.base64(data), fname:Utils.base64(fname), token: $('#token').val(), IP: $('#IP').val() },
+            data: { ename: utils.base64(this.vars.ename), data: utils.base64(data), fname:utils.base64(fname), token: $('#token').val(), IP: $('#IP').val() },
             success : function( msg ) {
                 new Dialog("mail").affiche("Envoi d'EMail",msg,false);
             }.bind(this),
@@ -119,7 +119,7 @@ function SendHelper (myCaller) {
         if(supportsDownloadAttribute) {
             link = $('<a>Votre fichier</a>');
             link.attr({
-                href: 'data:attachment/csv;base64,' + encodeURI(Utils.base64(content)),
+                href: 'data:attachment/csv;base64,' + encodeURI(utils.base64(content)),
                 target: '_blank',
                 download: filename
             })[0];

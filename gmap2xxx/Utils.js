@@ -5,3 +5,4 @@ function Utils () {
         //return window.btoa(unescape(encodeURIComponent(text)));
     }
 }
+var utils = new Utils();

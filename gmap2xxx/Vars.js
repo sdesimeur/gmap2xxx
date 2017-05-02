@@ -13,7 +13,7 @@ function Vars () {
     this.del1step1 = false;
     this.allurlplus = [];
     this.saveUrls2CookiesAndReloadPage = function () {
-        var tmp = Utils.base64(JSON.stringify(this.allurlplus));
+        var tmp = utils.base64(JSON.stringify(this.allurlplus));
         this.myCookies.setCookie('URLS',tmp);
         location.reload(true);
     }
