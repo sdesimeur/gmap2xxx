@@ -21,7 +21,7 @@ function TypeITF (tabs,myCaller) {
 	    var obj = new Object();
 	    var lonstartoffset=12;
 	    var lonendoffset=lonstartoffset+16;
-        var highwayAndTollOffset = 148;
+        var highwayAndTollOffset = 146;
 	    var deltalon=4;
 	    obj.vers="@v7";
         obj.versLength=obj.vers.length;
