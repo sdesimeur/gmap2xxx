@@ -57,7 +57,7 @@ function TypeITF (tabs,myCaller) {
                     dv.setUint32(etape1offset+i*uneEtapeLength+lonstartoffset,lng,this.littleEndian);
                     dv.setUint32(etape1offset+i*uneEtapeLength+lonstartoffset+deltalon,lat,this.littleEndian);
                     //if (i<obj.nbetapes-2)
-                        dv.setUint8(etape1offset+i*uneEtapeLength+highwayAndTollOffset,highwayAndTollValue,this.littleEndian);
+//                        dv.setUint8(etape1offset+i*uneEtapeLength+highwayAndTollOffset,highwayAndTollValue,this.littleEndian);
                 }
                 if (i>0) {
                     dv.setUint32(etape1offset+(i-1)*uneEtapeLength+lonendoffset,lng,this.littleEndian);
