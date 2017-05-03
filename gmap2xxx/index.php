@@ -18,7 +18,7 @@ header('Content-Type: text/html; charset=utf-8');
 <body>
     <?php include "../mysql/security.php"; ?>
     <div id="dialogs"></div>
-	<script type="text/javascript" src="./Loader.js?version=080"></script>
+	<script type="text/javascript" src="./Loader.js?version=081"></script>
 	<script type="text/javascript" src="../jquery/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
 <!--	<script type="text/javascript" src="./View.js"></script>
@@ -44,7 +44,7 @@ header('Content-Type: text/html; charset=utf-8');
 					</form>
 				</td>
 			</tr></table>
-			<table class="titre_principal mepg"><tr><td><h2>Conversion d&rsquo;une URL<br/>###GMAPLNK### ou ###BMAPLNK### ou ###YNLNK### ou ###VIAMICHELIN###<br/>en fichier ITN pour Tomtom<br/>ou en fichier GPX</h2></td></tr></table>
+			<table class="titre_principal mepg"><tr><td><h2>Conversion d&rsquo;une URL<br/>###GMAPLNK### ou ###BMAPLNK### ou ###YNLNK### ou ###VIAMICHELIN###<br/>en fichier ITN pour Tomtom<br/>ou en fichier GPX (Version ###VERSION###)</h2></td></tr></table>
 		</td>
 		<td class="cote" id="droite">
 				<h2>Facebook</h2>
