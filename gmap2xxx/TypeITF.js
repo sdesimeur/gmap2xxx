@@ -21,7 +21,7 @@ function TypeITF (tabs,myCaller) {
 	    var obj = new Object();
 	    var lonstartoffset=12;
 	    var lonendoffset=lonstartoffset+16;
-        var highwayAndTollOffset = 153;
+        var highwayAndTollOffset = 76;
 	    var deltalon=4;
 	    obj.vers="@v7";
         obj.versLength=obj.vers.length;
@@ -56,7 +56,7 @@ function TypeITF (tabs,myCaller) {
                 if (i<obj.nbetapes-1) {
                     dv.setUint32(etape1offset+i*uneEtapeLength+lonstartoffset,lng,this.littleEndian);
                     dv.setUint32(etape1offset+i*uneEtapeLength+lonstartoffset+deltalon,lat,this.littleEndian);
-                    if (i<obj.nbetapes-2)
+                    //if (i<obj.nbetapes-2)
                         dv.setUint32(etape1offset+i*uneEtapeLength+highwayAndTollOffset,highwayAndTollValue,this.littleEndian);
                 }
                 if (i>0) {
