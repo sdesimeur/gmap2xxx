@@ -260,6 +260,9 @@ function View () {
 
 $(document).ready(function () { 
     var view = new View();
+    var title = $(document).prop('title');
+    title = title.replace('###VERSION###',version);
+    $(document).attr('title',title);
     document.body.innerHTML=document.body.innerHTML.replace(/###VERSION###/g,version);
     document.body.innerHTML=document.body.innerHTML.replace(/###GMAPLNK###/g,'<a href="https://www.google.fr/maps/dir/" target="_blank">GoogleMaps</a>');
     document.body.innerHTML=document.body.innerHTML.replace(/###YNLNK###/g,'<a href="http://www.yournavigation.org/" target="_blank">YourNavigation</a>');

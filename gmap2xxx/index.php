@@ -4,13 +4,13 @@ header('Content-Type: text/html; charset=utf-8');
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<title>Conversion d&rsquo;une URL en fichier ITN pour Tomtom ou en fichier GPX</title>
+	<title>Conversion d&rsquo;une URL en fichier ITN pour Tomtom ou en fichier GPX (Version ###VERSION###)</title>
 <link rel="stylesheet" href="../jquery/jquery-ui.min.css" />
 <link rel="stylesheet" href="./index.css" />
 	<meta content="text/html; charset=utf-8" http-equiv="content-type">
     <meta charset="UTF-8">
 	<meta type="keywords" content="google,maps,googlemaps,gps,tomtom,itn,gpx,conversion,convert,route" />
-        <meta type="description" content="Transformez vos URL GoogleMaps en fichier pour un GPS." />
+        <meta type="description" content="Transformez vos URL GoogleMaps en fichier pour un GPS (Version ###VERSION###)." />
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
