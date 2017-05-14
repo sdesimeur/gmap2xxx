@@ -8,7 +8,7 @@ function SendPHPRequest (sql,myCaller) {
             method: "POST",
             url: "../mysql/ReceivePHPRequest.php",
 //            contentType: "application/json; charset=utf-8",
-            data: { sql: Base64.encode(JSON.stringify(sql)), token: document.getElementById('token').value, IP: document.getElementById('IP').value },      // NOTE CHANGE HERE
+            data: { sql: utils.base64(JSON.stringify(sql)), token: document.getElementById('token').value, IP: document.getElementById('IP').value },      // NOTE CHANGE HERE
             success: function(msg) {
                 this.myCaller.ajaxSuccessReturn(msg);
                 //console.log(JSON.stringify(msg));

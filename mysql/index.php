@@ -14,7 +14,7 @@
     <div id="other"></div>
     <div id="msg"></div>
     <div id="dialog"></div>
-	<script type="text/javascript" src="./Loader.js?version=3"></script>
+	<script type="text/javascript" src="./Loader.js?version=4"></script>
 	<script type="text/javascript" src="../jquery/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
 						<textarea name="sqltxt" id="sqltxt" rows=40 cols=100></textarea><br>
