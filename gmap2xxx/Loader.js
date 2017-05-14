@@ -1,5 +1,5 @@
 "use strict";
-var version = '080';
+var version = '081';
 var javaScriptFiles = [
     "./Vars.js",
     "../mysql/SendPHPRequest.js",

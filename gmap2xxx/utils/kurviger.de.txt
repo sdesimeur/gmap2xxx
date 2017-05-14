@@ -1,0 +1,1202 @@
+https://kurviger.de/en?point=44.37884%2C3.839722&point=44.74259%2C5.55361&point=44.64686%2C5.37939&point=44.63828%2C5.32278&point=44.60573%2C5.28848&point=44.55232%2C5.25262&point=44.55117%2C5.14003&point=44.5322%2C5.00152&point=44.5346%2C4.92218&point=44.51668%2C4.87009&point=44.47954%2C4.87641&point=44.45754%2C4.83183&point=44.43014%2C4.80201&point=44.36534%2C4.73808&point=44.36871%2C4.64703&point=44.33798%2C4.64193&point=44.30141%2C4.61317&point=44.3359%2C4.52231&point=44.37307%2C4.44719&point=44.38176%2C4.37387&point=44.351%2C4.28633&point=44.36741%2C4.16015&point=44.37981%2C4.10914&point=44.3527%2C4.06897&point=44.32576%2C4.0593&point=44.29763%2C4.03423&point=44.34074%2C3.90074&point=44.32442%2C3.82338&point=44.36044%2C3.76568&point=44.3673%2C3.73455&point=44.34773%2C3.6177&point=44.38115%2C3.63208&point=44.41582%2C3.60328&point=44.4156%2C3.53511&point=44.41453%2C3.51044&point=44.48248%2C3.45772&point=44.50235%2C3.35655&point=44.52364%2C3.29692&point=44.56888%2C3.29116&point=44.62327%2C3.25987&point=44.67886%2C3.15118&point=44.71947%2C3.1005&point=44.79591%2C3.03871&point=44.81288%2C3.03413&point=44.89336%2C3.00219&locale=en&vehicle=motorcycle&weighting=curvature&additional_weighting=&elevation=true&layer=Here
+
+
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/Service" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="keywords" content="motorrad,routenplaner,maps,openstreetmap"/>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"63ad4a5d26ff5cdbfdc046429cc36280",petok:"27fc09756bb43a43206e103f9236b7a9c452e86d-1494791226-3600",zone:"kurviger.de",rocket:"a",apps:0}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=85b614c0f6/cloudflare.min.js"><'+'\/script>');}}catch(e){};
+//]]>
+</script>
+<link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-touch-icon-152x152.png">
+<link rel="manifest" href="/img/favicon/manifest.json">
+<link rel="shortcut icon" href="/img/favicon/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" title="Kurviger - Your Motorcycle Route Planner" href="opensearch.xml"/>
+<title>Kurviger - Your Motorcycle Route Planner</title>
+<meta name="description" content="Kurviger is your motorcycle route planner. We prefer curvy roads, that are fun to ride and avoid
+cities. Curvy round trips starting from your house.
+"/>
+<meta itemprop="serviceType" content="Motorcycle Routing"/>
+<meta property="og:url" content="https://kurviger.de"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Kurviger - Your Motorcycle Route Planner"/>
+<meta property="og:description" content="Kurviger is your motorcycle route planner. We prefer curvy roads, that are fun to ride and avoid
+cities. Curvy round trips starting from your house.
+"/>
+<meta property="og:image" content="https://kurviger.de/img/kurviger_screenshot.png"/>
+<link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/cartodb.css"/>
+<link rel="stylesheet" href="/css/perfect-scrollbar.min.css"/>
+<link rel="stylesheet" href="/css/leaflet.css"/>
+<link rel="stylesheet" href="/css/leaflet.elevation-0.0.4.css"/>
+<link rel="stylesheet" href="/css/leaflet_numbered_markers.css"/>
+<link rel="stylesheet" href="/css/leaflet.contextmenu.css"/>
+<link rel="stylesheet" href="/css/leaflet.loading.css"/>
+<link rel="stylesheet" href="/css/leaflet-fullscreen/leaflet.fullscreen.css"/>
+<link rel="stylesheet" href="/css/leaflet-easyPrint/easyPrint.css"/>
+<link rel="stylesheet" href="/css/easy-button.css"/>
+<link rel="stylesheet" href="/css/ui-lightness/jquery-ui-custom-1.11.4.min.css"/>
+<link rel="stylesheet" href="/css/select2.min.css?v=4.0.3"/>
+<link rel="stylesheet" href="/css/select2-bootstrap.min.css?v=v0.1.0-beta.9"/>
+<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="/dist/kurviger.css?v=1.0.14"/>
+<script type="text/rocketscript">
+window.cookieconsent_options = {
+"message": "We use cookies to ensure that we give you the best experience on our website. If you continue"+
+"without changing your settings, we will assume that you are happy to receive all cookies from this"+
+"website.",
+"dismiss": "Ok!",
+"learnMore": "Learn more!",
+"link": "https://kurviger.de/datenschutz/en",
+"theme": "light-top"
+};
+</script>
+<script type="text/rocketscript" data-rocketsrc="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js" integrity="sha384-3qd135SvFTXOR68oWwkYenYIg9VfRgnWF/6pUJWLkgPzasK8TnvMpFtSjdC21Jyn" crossorigin="anonymous"></script>
+<link rel="alternate" href="https://kurviger.de/en" hreflang="en"/>
+<link rel="alternate" href="https://kurviger.de/" hreflang="de"/>
+<link rel="canonical" href="https://kurviger.de/en"/>
+<meta name="google-site-verification" content="PemDYObumQutk1pCXhZL9u3TmUrV0cplnYrhfacxJI8"/>
+<meta name="msvalidate.01" content="C3EB0C550FF8781802CD252FD327C252"/>
+<script async data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript"></script>
+<script type="text/rocketscript">
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-7858522614029220",
+enable_page_level_ads: true
+});
+</script>
+</head>
+<body>
+<div id="_locale" class="hidden">en</div>
+<div id="_baseUrl" class="hidden">https://kurviger.de/en</div>
+<script type="text/rocketscript">
+
+(function (d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s);
+js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+window.twttr = (function (d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0],
+t = window.twttr || {};
+if (d.getElementById(id)) return t;
+js = d.createElement(s);
+js.id = id;
+js.src = "https://platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js, fjs);
+
+t._e = [];
+t.ready = function (f) {
+t._e.push(f);
+};
+
+return t;
+}(document, "script", "twitter-wjs"));
+</script>
+<div id="input" class="sidebar">
+<div id="input_header">
+<div class="header box">
+<div>
+<a href="https://kurviger.de/en">
+<img src="/img/kurviger_logo.svg" onerror="this.src='/img/kurviger_logo_min.png'; this.onerror=null;" class="img-responsive" alt="Kurviger.de" style="width: 100% \9;">
+</a>
+</div>
+</div>
+<div class="box">
+<ul class="nav nav-pills" role="tablist">
+<li role="presentation" class="active">
+<a href="#route" aria-controls="route" role="tab" data-toggle="tab">
+<i class="fa fa-compass fa-lg"></i>
+Route Planning
+</a>
+</li>
+<li role="presentation">
+<a href="#tour" aria-controls="tour" role="tab" data-toggle="tab">
+<i class="fa fa-retweet fa-lg"></i>
+Round Trips
+</a>
+</li>
+</ul>
+<div class="tab-content center-block box">
+<div role="tabpanel" class="tab-pane active" id="route">
+<form id="locationform" class="form-horizontal">
+<div>
+<div id="locationpoints">
+</div>
+</div>
+<div class="form-group box box--tight" style="margin-bottom: 0px;">
+<div>
+<button id="x_pointAdd" class="pointAdd btn btn-default pull-left" type="button" data-toggle="tooltip" title="Add destination">
+<i class="fa fa-plus fa-fw"></i>
+</button>
+<div type="submit" class="btn btn-primary pull-right" id="searchButton" data-loading-text="<img src='/img/loading.gif'/> Searching">
+<i class="fa fa-search"></i> Search
+</div>
+</div>
+</div>
+</form>
+</div>
+<div role="tabpanel" class="tab-pane" id="tour">
+<form id="tourform" class="form-horizontal">
+<div class="form-group form-inline box box--tight">
+<div class="input-group">
+<div class="input-group-addon">
+<i class="fa fa-map-marker fa-fw"></i>
+</div>
+<input type="text" class="point__input form-control" id="tour_start" placeholder="Start point">
+<div class="input-group-btn">
+<button class="btn btn-default findLocation" type="button"><i class="fa fa-crosshairs"></i></button>
+</div>
+</div>
+<div id="Tour_ResolveError" class="pointResolveError"></div>
+</div>
+<div class="form-group form-inline box box--tight">
+<div class="input-group" style="width: 100%;">
+<div class="input-group-addon">
+<i class="fa fa-arrows-h fa-fw"></i>
+</div>
+<input type="number" class="point__input form-control" id="tour_distance" max="300" min="20" value="100">
+<span class="input-group-addon">km</span>
+</div>
+</div>
+<div class="form-group box box--tight">
+<div class="checkbox">
+<label>
+<input id="useBearing" type="checkbox"> Approximately into that direction
+</label>
+</div>
+</div>
+<div class="form-group center-block text-center space-tight">
+<input type="text" data-cursor=true data-thickness=1 data-width="100" data-height="100" data-displayInput="false" data-min="0" data-max="360" class="dial" id="bearing" value="0">
+</div>
+<div class="form-group box box--tight">
+<div class="text-right pull-right">
+<button id="tourButton" class="btn btn-primary" type="submit" data-loading-text="<img src='./img/loading.gif'/> Generating!">
+Generate round trip!
+</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="row box box--tight">
+<button type="button" id="deleteRoute" class="btn btn-danger pull-left" data-toggle="tooltip" title="Delete route">
+<i class="fa fa-trash fa-fw"></i>
+</button>
+<div class="btn btn-default pull-left" id="export-link" data-toggle="modal" data-target="#shareModal">
+<i class="fa fa-share-alt fa-fw" data-toggle="tooltip" title="Share route with your friends"></i>
+</div>
+<div id="curvatureSlector" class="btn-group pull-right" data-toggle="buttons">
+<label id="curvaturefastest" class="btn btn-default" data-toggle="tooltip" title="Fastest route. Also uses highways.">
+<input type="radio" name="fastest" autocomplete="off">
+<img src="/img/mode_icons/curvaturefastest_small.png" alt="fast_mode"/>
+</label>
+<label id="curvature" class="btn btn-default" data-toggle="tooltip" title="Curvy route. Avoid highways. Prefers curvy routes and slopes.">
+<input type="radio" name="curvature" autocomplete="off">
+<img src="/img/mode_icons/curvature_small.png" alt="curvy_mode"/>
+</label>
+<label id="curvaturebooster" class="btn btn-default" data-toggle="tooltip" title="Extra curvy! Avoid highways. Prefers curvy routes and slopes.">
+<input type="radio" name="curvaturebooster" autocomplete="off">
+<img src="/img/mode_icons/curvaturebooster_small.png" alt="extra_curvy_mode"/>
+</label>
+</div>
+</div>
+<div class="row box box--tight">
+<div>
+<div class="btn btn-default pull-left" id="gpxImport" data-toggle="modal" data-target="#gpxImportModal">
+<i class="fa fa-upload" aria-hidden="true"></i> Import
+</div>
+<div class="btn btn-default pull-right" id="export" data-toggle="modal" data-target="#exportModal">
+<i class="fa fa-download" aria-hidden="true"></i> Export
+</div>
+</div>
+</div>
+</div>
+<div class="row box box--tight">
+<div>
+<div class="btn btn-default pull-left" id="loadTourcode" data-toggle="modal" data-target="#loadCodeModal">
+<i class="fa fa-book" aria-hidden="true"></i> Tourcode
+</div>
+<button class="btn btn-default pull-right" type="button" data-toggle="collapse" data-target="#tourInstructions" aria-expanded="false" aria-controls="tourInstructions">
+<i class="fa fa-map-signs" aria-hidden="true"></i> Turn instructions:
+</button>
+</div>
+</div>
+<div class="row box box--tight">
+<button type="button" id="advancedSettingsButton" class="btn btn-default pull-left btn-block" data-toggle="collapse" data-target="#advancedSettingsPanel" aria-expanded="false" aria-controls="advancedSettingsPanel">
+<i class="fa fa-cog fa-fw"></i> Advanced Options
+</button>
+</div>
+<div class="row box box--tight collapse" id="advancedSettingsPanel">
+<div class="panel panel-default sidebar--panel">
+<div class="panel-body">
+<div class="row box--tight--lr">
+<div class="checkbox">
+<label>
+<input type="checkbox" value="" id="uniquePaths">
+<i class="fa fa-random fa-fw"></i>
+Avoid using the same road twice
+</label>
+</div>
+</div>
+<div class="row box--tight--lr">
+<div class="checkbox">
+<label>
+<input type="checkbox" value="" id="avoidTollRoads">
+<i class="fa fa-money fa-fw"></i>
+Avoid toll roads
+</label>
+</div>
+</div>
+<div class="row box--tight--lr">
+<div class="checkbox">
+<label>
+<input type="checkbox" value="" id="avoidFerries">
+<i class="fa fa-ship fa-fw"></i>
+Avoid ferries
+</label>
+</div>
+</div>
+<div class="row box--tight--lr">
+<div class="checkbox">
+<label>
+<input type="checkbox" value="" id="avoidMotorways">
+<i class="fa fa-car fa-fw"></i>
+Avoid motorways
+</label>
+</div>
+</div>
+<div class="row box--tight--lr">
+<div class="checkbox">
+<label>
+<input type="checkbox" value="" id="avoidSmallRoads">
+<i class="fa fa-arrows-h fa-fw"></i>
+Avoid narrow roads
+</label>
+</div>
+</div>
+<div class="row box--tight--lr">
+<button id="reverseRoute" class="btn btn-default pull-left btn-block" type="button">
+<i class="fa fa-exchange fa-fw"></i> Reverse route
+</button>
+</div>
+<div class="row box--tight--lr">
+<button id="snapWaypoints" class="btn btn-default pull-left btn-block" type="button" data-toggle="tooltip" title="Snaps every waypoint to the closest street. Changes waypoint names.">
+<i class="fa fa-magic fa-fw"></i> Place waypoints on street
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="row box box--tight">
+<div id="info" class="panel panel-default sidebar--panel info hidden">
+<div class="panel-body">
+<table id="infoTable" class="table table-condensed info__route">
+<tbody>
+<tr>
+<td>Distance:</td>
+<td id="routeDistance"></td>
+</tr>
+<tr>
+<td>Estimated duration:</td>
+<td id="routeTime"></td>
+</tr>
+<tr>
+<td>Altitude:</td>
+<td id="routeElevation"></td>
+</tr>
+</tbody>
+</table>
+<div class="collapse" id="tourInstructions"></div>
+</div>
+</div>
+<div id="error" class="error text-danger alert alert-danger info__error hidden">
+</div>
+</div>
+<div class="box box--tight text-center">
+<div>
+<a class="footer-link language-switcher" href="https://kurviger.de/"><img src="/img/flag/Germany.png"> Deutsch</a>
+</div>
+<div>
+<a class="footer-link" href='/about/en'>About Kurviger</a>
+</div>
+<div>
+<a class="footer-link" href='https://docs.kurviger.de/web/faq'>FAQ - Frequently Asked Questions</a>
+</div>
+<div>
+<a class="footer-link" href='/terms/en'>Terms of Service</a>
+</div>
+<div>
+<a class="footer-link" href='https://docs.kurviger.de/'>Documentation</a>
+</div>
+</div>
+<div class="box box--tight text-center">
+<div>
+<a href='https://play.google.com/store/apps/details?id=gr.talent.kurviger.pro&utm_source=website&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+<img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' style="max-width: 150px;"/>
+</a>
+</div>
+<div>
+<a class="twitter-share-button" href="https://twitter.com/share" data-url="https://kurviger.de/en" data-text="I&#039;ve just found this genius route planner for motorbikes" data-via="kurviger" data-hashtags="motorcycle,routeplaner">
+Tweet</a>
+</div>
+<div class="fb-like" data-href="https://www.facebook.com/kurviger/" data-width="160" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+<div style="padding-top: 5px;">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="W8KWCXV6X68BC">
+<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+</div>
+<div class="box box--tight">
+<div>
+<script async data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript"></script>
+
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7858522614029220" data-ad-slot="8098631594" data-ad-format="auto"></ins>
+<script type="text/rocketscript">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</div>
+<div class="box box--tight">
+<span class="text-left">
+<a class="footer-link" href='/datenschutz/en'>Privacy</a>
+</span>
+<span class="text-right" style="float: right;">
+<a class="footer-link text-right" href='/impressum/en'>Legal notice</a>
+</span>
+</div>
+<div id="options" class="hidden">
+<span id="vehicles"></span>
+</div>
+<div id="pointTemplate" class="hidden">
+<div id="{id}_Div" class="pointDiv form-group form-inline point">
+<div class="input-group">
+<div class="btn btn-default input-group-addon dragable__handle">
+<i id="{id}_Flag" class="fa fa-arrows-v fa-fw pointFlag"></i>
+</div>
+<input id="{id}_Input" class="point__input form-control" type="text" placeholder=""/>
+<div class="input-group-btn">
+<button class="btn btn-default findLocation" type="button"><i class="fa fa-crosshairs"></i></button>
+<button class="btn btn-default pointDelete disabled" type="button"><i class="fa fa-times"></i></button>
+</div>
+</div>
+<div id="{id}_ResolveError" class="pointResolveError"></div>
+</div>
+</div>
+</div>
+<div id="map" itemscope itemtype="http://schema.org/Map"></div>
+<div class="modal fade" id="gpxImportModal" tabindex="-1" role="dialog" aria-labelledby="gpxImportLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="gpxImportLabel">GPX Import</h4>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label class="btn btn-default btn-block btn-file">
+Gpx File <input type="file" id="gpxToImport" name="gpxToImport" style="display: none;">
+</label>
+<p class="help-block">Currently we only support importing .gpx Files.</p>
+</div>
+<div class="checkbox">
+<label>
+<input id="gpxImportUseOverlay" type="checkbox" checked> Show GPX data as overlay
+</label>
+</div>
+<div class="checkbox">
+<label>
+<input id="gpxImportUseRouting" type="checkbox" checked> Use GPX for route calculation
+</label>
+</div>
+<div class="form-group form-inline">
+<label for="gpxImportMaxWaypoints">Reduce the amount of waypoints to</label>
+<input class="form-control" type="number" id="gpxImportMaxWaypoints" name="gpxImportMaxWaypoints" min="2" max="200" value="50">
+<p class="help-block">
+The reduction is only applied for routing, not for displaying the overlay.
+Currently we support no more than 200 waypoints, but I recommend to stay below 50, since adding more points might negatively impact your experience.
+A guide about import GPX Tracks can be found <a href="https://docs.kurviger.de/web/importing_gpx_track" rel="nofollow" target="_blank">here</a>.
+If your route contains less waypoints than specified nothing will be removed.
+</p>
+</div>
+</div>
+<div class="modal-footer">
+<button id="executeGpxImport" type="button" class="btn btn-primary" data-dismiss="modal">Import
+</button>
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="exportModal" tabindex="-1" role="dialog" aria-labelledby="exportLabel">
+<div class="modal-dialog modal-xl" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Schließen"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="exportLabel">Route Export</h4>
+</div>
+<form id="GPXOptions" name="GPXOptions" class="form-horizontal">
+<div class="modal-body">
+<div class="row">
+<div class="col-md-6 col-sm-12">
+<div class="form-group">
+<label for="gpxRouteName" class="col-xs-4 control-label">Route Name</label>
+<div class="col-xs-8">
+<input type="text" class="form-control" id="gpxRouteName" placeholder="Kurviger">
+</div>
+</div>
+<div class="form-group">
+<label for="fileFormat" class="col-xs-4 control-label"><abbr title="
+We use the RouteConverter for the conversion>">Route format</abbr></label>
+<div class="col-xs-8">
+<select id="fileFormat">
+<option value="GPX" selected>*.gpx</option>
+<option value="Kml20Format">Google Earth 3 (*.kml)</option>
+<option value="Kml21Format">Google Earth 4 (*.kml)</option>
+<option value="Kml22Format">Google Earth 5 (*.kml)</option>
+<option value="TomTom5RouteFormat">Tom Tom 5 Route (*.itn)</option>
+<option value="TomTom8RouteFormat">Tom Tom 8 Route (*.itn)</option>
+<option value="TomTom95RouteFormat">Tom Tom 9.5 Route (*.itn)</option>
+<option value="CoPilot6Format">CoPilot 6 (*.trp)</option>
+<option value="CoPilot7Format">CoPilot 7 (*.trp)</option>
+<option value="CoPilot8Format">CoPilot 8 (*.trp)</option>
+<option value="CoPilot9Format">CoPilot 9 (*.trp)</option>
+<option value="Igo8RouteFormat">iGO8 Route (*.kml)</option>
+<option value="Nmn4Format">Navigon Mobile Navigator 4 (*.rte)</option>
+<option value="Nmn5Format">Navigon Mobile Navigator 5 (*.rte)</option>
+<option value="Nmn6Format">Navigon Mobile Navigator 6 (*.rte)</option>
+<option value="Nmn7Format">Navigon Mobile Navigator 7 (*.freshroute)</option>
+<option value="NmnUrlFormat">Navigon Mobile Navigator URL (*.txt)</option>
+</select>
+</div>
+</div>
+<div id="divRouteType" class="form-group">
+<div class="col-xs-4">
+<label for="gpx_route">Export of</label>
+</div>
+<div class="form-inline col-xs-8">
+<label class="checkbox-inline">
+<input type="checkbox" id="gpx_track" name="GPXOptions" value="track" checked="checked"><abbr title="A track contains enough waypoints to exactly draw the route">Track</abbr>
+</label>
+<label class="checkbox-inline">
+<input type="checkbox" id="gpx_waypoints" name="GPXOptions" value="waypoints"><abbr title="Waypoints contains the waypoints and additional waypoints (similar to route)">Waypoints</abbr>
+</label>
+<label class="checkbox-inline">
+<input type="checkbox" id="gpx_route" name="GPXOptions" value="route"><abbr title="Route contains the waypoints and additional waypoints (similar to waypoints)">Route</abbr>
+</label>
+<span class="help-block">You have to select at least one option.</span>
+</div>
+</div>
+<div class="form-group">
+<label for="gpxAdditionalWaypoints" class="col-xs-4 control-label">
+<abbr title="Additional Waypoints are placed along the route to support your navigation device to follow the route exactly">Additional Waypoints</abbr>
+</label>
+<div class="col-xs-8">
+<div id="gpxAdditionalWaypoints">
+<label class="radio-inline">
+<input type="radio" name="radioAdditionalWaypoints" value="few"> Few
+</label>
+<label class="radio-inline">
+<input type="radio" name="radioAdditionalWaypoints" value="medium"> Medium
+</label>
+<label class="radio-inline">
+<input type="radio" name="radioAdditionalWaypoints" value="many"> A lot
+</label>
+<label class="radio-inline">
+<input type="radio" name="radioAdditionalWaypoints" value="custom" checked> Count
+</label>
+<div class="radio-text-inline">
+<input type="text" id="gpxAdditionalWaypointsCustom" name="gpxAdditionalWaypointsCustom" value="0" class="form-control">
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12">
+<div class="input-group">
+<input id="gpxExportUrl" type="url" class="form-control" placeholder="(optionally) generate a link to the file">
+<span class="input-group-btn">
+<button id="createExportUrl" class="btn btn-default" type="button">generate
+</button>
+</span>
+</div>
+</div>
+</div>
+<div class="row space-top">
+<div class="col-xs-12">
+<div class="input-group">
+<input type="text" class="form-control" placeholder="Route Name" id="exportSendToScenicInput">
+<span class="input-group-btn">
+<button type="button" class="btn btn-default btn-send_to_scenic" id="exportSendToScenicButton">
+<img src="/img/send-to-scenic.png"/> Send route to Scenic
+</button>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-sm-12">
+<div class="hidden-lg hidden-md">&nbsp;</div>
+<div class="panel-group" id="exportAccordion" role="tablist" aria-multiselectable="false">
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingDesc">
+<h4 class="panel-title">
+<a role="button" data-toggle="collapse" data-parent="#exportAccordion" href="#collapseDesc" aria-expanded="false" aria-controls="collapseDesc">
+General export advice
+</a>
+</h4>
+</div>
+<div id="collapseDesc" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingDesc">
+<div class="panel-body">
+In order to create an excact copy of the route you should use the Track.
+However, in reality for most navigation devices the route works better.
+If you export the route I recommend adding some additional waypoints (about 10 waypoints for 100km).
+Typically Kurviger will determine the amount of additional waypoints without cluttering the route, so
+feel
+free to add additional waypoints.</br>
+If you use an Android device I can recommend using either OSMAnd or CoPilot.</br>
+For iOS devices I recommend using either Be-On-Road or again CoPilot.
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingBc">
+<h4 class="panel-title">
+<a role="button" data-toggle="collapse" data-parent="#exportAccordion" href="#collapseBc" aria-expanded="false" aria-controls="collapseBc">
+Importing a Kurviger route to a Garmin Zumo using BaseCamp
+</a>
+</h4>
+</div>
+<div id="collapseBc" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBc">
+<div class="panel-body">
+<div>
+Once you downloaded a GPX file from Kurviger, open it in BaseCamp.
+If everything worked out you will see some waypoints, a straight route between the waypoints, and a track.
+The track should be equal to the route calculated by Kurviger.
+You can convert the Kurviger track to a Garmin route, if you change the BaseCamp profile to &lt;code&gt;Direct Route&lt;/code&gt;,
+Before the conversion you will be asked about the number of route points that should be considered.
+Using the option &lt;code&gt;automatically select&lt;/code&gt; should be fine.
+Typically you should end up seeing a route that is pretty similar to the route calculated by Kurviger.
+&lt;br&gt;
+&lt;br&gt;
+Attention: I translated this text without assuring that the options exactly match my translations (I don&#039;t use BaseCamp personally).
+If a name of an option does not match the actual name in BaseCamp, please send me a mail and I will correct it.
+</div>
+<div>
+Thanks to Jörgen for creating the BaseCamp tutorial.
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingTt">
+<h4 class="panel-title">
+<a role="button" data-toggle="collapse" data-parent="#exportAccordion" href="#collapseTt" aria-expanded="false" aria-controls="collapseTt">
+Importing a route from Kurviger to a TomTom device
+</a>
+</h4>
+</div>
+<div id="collapseTt" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTt">
+<div class="panel-body">
+If your TomTom supports GPX files, just use the GPX file.
+Otherwise, there are TomTom devices that support <code>GPX2ITN</code>.
+For these devices, you should export the track from Kurviger and connect your TomTom to your computer.
+Copy the downloaded GPX file to your TomTom device into the folder <code>GPX2ITN</code>.
+Disconnect the TomTom from your computer.
+Turn your device on.
+When the conversion has finished you can load your route.
+In the main menu, tap "Manage itineraries" and "Open".
+More details can be found at the <a href="http://uk.support.tomtom.com/app/answers/detail/a_id/16862/~/how-can-i-convert-gpx-files-into-itn-files%3F" rel="nofollow" target="_blank">TomTom support page</a>.
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingBor">
+<h4 class="panel-title">
+<a role="button" data-toggle="collapse" data-parent="#exportAccordion" href="#collapseBor" aria-expanded="false" aria-controls="collapseBor">
+Importing a route from Kurviger to Be-On-Road and an iPhone (iOs)
+</a>
+</h4>
+</div>
+<div id="collapseBor" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingBor">
+<div class="panel-body">
+First, you have to export the route from Kurviger (I recommend you to add additional waypoints).
+In iTunes, with a connected iPhone, click on the iPhone symbol, go to "Apps" and scroll to the bottom.
+There you will find Apps that allow you to exchange data with.
+Choose Be-On-Road and import the route that you just downloaded from Kurviger.
+From Be-On-Road choose "Destination" and then "Routeplanner".
+Use the "Load" symbol (the box with the arrow) on the lower edge to import the route.
+Choose the route and load it.
+Now you should see the waypoints of the loaded route.
+You can delete selected waypoints by touching them and choose delete in the dialog.
+Thanks to Marcus for providing these instructions.
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingSyg">
+<h4 class="panel-title">
+<a role="button" data-toggle="collapse" data-parent="#exportAccordion" href="#collapseSyg" aria-expanded="false" aria-controls="collapseSyg">
+Importing a route from Kurviger to Sygic and an iPhone/iPad (iOs)
+</a>
+</h4>
+</div>
+<div id="collapseSyg" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSyg">
+<div class="panel-body">
+You should have installed DropBox and <a href="http://www.benichou-software.com/index.php?option=com_content&view=article&id=4&itemid=3&lang=en">IITNConverter</a>.
+If you have never saved a route as favorite in Sygic, you should first save a route as favorite, before continuing.
+In Sygic, setup DropBox and log into your DropBox.
+Plan a route using Kurviger and export it as Gpx-file using the route option and additional waypoints.
+You have to convert the Gpx-file using ITNconverter to the .itf format (Sygic GPS Navigation 13,14,15,16).
+In DropBox go to Apps -&gt; Sygic All regions -&gt; res -&gt; itinerary and copy your route to that path.
+Use your iPad or iPhone and open Sygic.
+On the top right next to &quot;Search&quot;, you have to click on the small flag.
+You will see a menu, choose favorites.
+The route should be listed there.
+<strong>Important:</strong> unfortunately, the route will not be displayed by the saved name.
+There will be either a duplicated route or the route will be named by the start or end point of your route.
+Thanks to Achim for providing these instructions.
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingCp">
+<h4 class="panel-title">
+<a role="button" data-toggle="collapse" data-parent="#exportAccordion" href="#collapseCp" aria-expanded="false" aria-controls="collapseCp">
+Importing a route from Kurviger to CoPilot and an Android
+</a>
+</h4>
+</div>
+<div id="collapseCp" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading">
+<div class="panel-body">
+You should have installed CoPilot on your Android.
+To the best of my knowledge, you need the <a href="https://play.google.com/store/apps/details?id=com.alk.copilot.eumarket.premiumeupan">pro version of CoPilot</a> for importing routes.
+Export your itinerary from Kurviger using the Waypoints option and the .trp Format (I recommend you to add additional waypoints).
+Connect your Android device to your computer.
+You should see your Android device from within your file explorer.
+Copy the downloaded .trp file to your Android device into the folder <code>SD card\Android\data\com.alk.copilot.*\files\EUsave</code>, whereas the asterisk marks the actual installed version of CoPilot.
+Start CoPilot and go to Route -> Plan or Edit Route -> Load -> choose the route.
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading" role="tab" id="headingOtg">
+<h4 class="panel-title">
+<a role="button" data-toggle="collapse" data-parent="#exportAccordion" href="#collapseOtg" aria-expanded="false" aria-controls="collapseOtg">
+Is it possible to send the route to my navigation device using my smartphone/tablet?
+</a>
+</h4>
+</div>
+<div id="collapseOtg" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOtg">
+<div class="panel-body">
+If your mobile device supports <abbr title="USB On-The-Go" class="initialism">USB OTG</abbr>, it is possible.
+You just need to buy a USB OTG adapter (quite cheap at mostly every electronics store).
+Connect the adapter to the USB port of your mobile device and to your navigation device.
+You should be able to see your navigation device in a file explorer on your mobile device (e.g. ES File Explorer).
+Copy a downloaded route file to your navigation device as you would do from your computer.
+We tested this with a Zumo 550 and a TT Rider 400.
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12 text-danger">
+The routes from Kurviger are for planning purposes only.
+You may find that construction projects, traffic, weather, or other events may cause some roads to be impassable.
+You should plan your route accordingly.
+You must obey all signs, laws, or notices regarding your route.
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button id="executeExport" type="button" class="btn btn-primary" data-dismiss="modal">Export
+</button>
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-labelledby="shareLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="shareLabel">Share route</h4>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-md-8 col-sm-12 col-md-offset-2 text-info">
+Simply copy the url and send it to your friends. Your friends can open the route and use it.
+</div>
+</div>
+<div class="row">
+<div class="col-md-8 col-sm-12 col-md-offset-2" style="padding-top: 10px;">
+<input type="url" class="form-control" id="shareUrl" placeholder="ShareUrl">
+</div>
+</div>
+<div class="row">
+<div class="col-md-8 col-sm-12 col-md-offset-2" style="padding-top: 10px;">
+<div class="checkbox">
+<label>
+<input type="checkbox" id="share_remove_names" checked> Remove waypoint names (recommended)
+</label>
+</div>
+</div>
+</div>
+<div class="row">
+<div id="share_qr_code_container" class="col-md-8 col-sm-12 col-md-offset-2" style="padding-top: 10px;">
+<img src="/img/indicator.gif" alt="" title="" id="share_qr_code"/>
+</div>
+</div>
+<div class="row">
+<div class="col-md-8 col-sm-12 col-md-offset-2" style="padding-top: 10px;">
+<div class="input-group">
+<input type="text" class="form-control" placeholder="Route Name" id="shareSendToScenicInput">
+<span class="input-group-btn">
+<button type="button" class="btn btn-default btn-send_to_scenic" id="shareSendToScenicButton"><img src="/img/send-to-scenic.png"/> Send route to Scenic</button>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" id="loadCodeModal" tabindex="-1" role="dialog" aria-labelledby="loadCodeLabel">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 class="modal-title" id="loadCodeLabel">Load Tourcode</h4>
+</div>
+<div class="modal-body">
+<div class="row">
+<div class="col-md-8 col-sm-12 col-md-offset-2" style="padding-top: 10px;">
+<div>
+This input allows you to load a tourcode. Every tourcode loads a marvelous motorcycle trip.
+Tourcodes can be found in different motorcycle magazines, e.g.,
+<a href="http://www.motorradstrassen.eu/" rel="nofollow" target="_blank">MOTORRADSTRASSEN</a>,
+<a href="http://motorradfreizeit.de/" rel="nofollow" target="_blank">MotorradFreizeit</a>,
+and in different motorcycle road atlantes found at LOUIS.
+</div>
+<input type="text" class="form-control" id="codeToLoad" placeholder="Your tourcode">
+</div>
+</div>
+<div class="row">
+<div class="col-md-8 col-sm-12 col-md-offset-2" style="padding-top: 10px;">
+<button class="btn btn-default" type="submit" id="loadCode">Load!</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/rocketscript">
+
+var showFuel;
+var showParking;
+var showPass;
+var showMechanic;
+var showMuseum;
+var showAttraction;
+
+var poweredByElement = '<a href="http://www.motorradstrassen.eu/"><img src="https://kurviger.de/img/whitelabel/powered_by_motorradstrassen.jpg" alt="Motorradstrassen"></a>';
+
+
+
+var poisTableName = 'planet_latest_use';
+var arTableName = 'access_restrictions_17_03_20';
+
+window.setupCartoDB = function (map, translate) {
+
+showFuel = (Cookies.get('kurviger.showFuel') || "true") == "true";
+showParking = (Cookies.get('kurviger.showParking') || "true") == "true";
+showPass = (Cookies.get('kurviger.showPass') || "true") == "true";
+showMechanic = (Cookies.get('kurviger.showMechanic') || "false") == "true";
+showMuseum = (Cookies.get('kurviger.showMuseum') || "false") == "true";
+showAttraction = (Cookies.get('kurviger.showAttraction') || "false") == "true";
+
+
+var layerSource = {
+user_name: 'boldtrn'
+, type: 'cartodb'
+, sublayers: [{
+sql: "SELECT * FROM " + poisTableName,
+cartocss: getCartoCss(),
+interactivity: 'cartodb_id'
+}, {
+sql: 'SELECT * FROM ' + arTableName,
+cartocss:
+'#' + arTableName + '[zoom > 6]{' +
+'line-color: #FF6600;' +
+'[zoom>6]{line-width: 2;}' +
+'[zoom>10]{line-width: 4;}' +
+'[zoom>11]{line-width: 5;}' +
+'[zoom>12]{line-width: 8;}' +
+'line-opacity: 0.6;' +
+'}'
+,
+interactivity: 'cartodb_id'
+}
+]
+};
+
+var sublayers = [];
+
+
+// Add CartoDB data layers
+cartodb.createLayer(map, layerSource, {https: true}).addTo(map)
+.done(function (layer) {
+for (var i = 0; i < layer.getSubLayerCount(); i++) {
+var sublayer = layer.getSubLayer(i);
+sublayers[i] = sublayer;
+
+if (i == 0) {
+var iw = cdb.vis.Vis.addInfowindow(map, sublayer, getOSMFields(), {
+// we provide a nice default template, if you want yours uncomment this
+infowindowTemplate: getInfoWindowOSMTemplate(translate)
+// infowindowTemplate: $('#infowindow_template').html(),
+}).model.set({
+// Is needed for the event to trigger
+'sanitizeTemplate':false
+});
+sublayer.setInteraction(true);
+
+sublayer.on('featureClick', function(e, latlng, pos, data) {
+});
+
+/* Bind to the visibility property change */
+iw.on('change:visibility',function(iw,visibility,changes){
+if (!visibility){
+}
+});
+}
+
+if (i == 1) {
+cdb.vis.Vis.addInfowindow(map, sublayer, getARFields(), {
+// we provide a nice default template, if you want yours uncomment this
+infowindowTemplate: getInfoWindowAccessRestrictionsTemplate(translate)
+});
+sublayer.setInteraction(true);
+}
+
+}
+//defaultLayer.setZIndex(0);
+})
+.error(function (err) {
+// report error
+console.log("An error occurred: " + err);
+});
+
+registerButtons(map, translate, sublayers);
+
+};
+
+function getOSMFields(){
+return ['name', 'opening_hours', 'brand', 'phone', 'contact_phone', 'website', 'contact_website', 'ele', 'osm_id'];
+}
+
+function getARFields(){
+return ['name', 'ref', 'motorcycle_conditional', 'motorcycle_forward_conditional', 'motorcycle_backward_conditional'];
+}
+
+function getInfoWindowOSMTemplate(translate){
+
+var infowindowTemplateOSM =
+'<div class="cartodb-popup v2">' +
+'<a href="#close" class="cartodb-popup-close-button close">x</a>' +
+'<div class="cartodb-popup-content-wrapper">' +
+'<div class="cartodb-popup-header">' +
+'<h3>{{content.data.name}}</h3>' +
+'</div>' +
+'<div class="cartodb-popup-content">' +
+'{{#content.data.ele}}<p><strong>'+translate.tr('carto_height')+':</strong> {{content.data.ele}}</p>{{/content.data.ele}}' +
+'{{#content.data.brand}}<p><strong>'+translate.tr('carto_brand')+':</strong> {{content.data.brand}}</p>{{/content.data.brand}}' +
+'{{#content.data.opening_hours}}<p><strong>'+translate.tr('carto_opening_hours')+':</strong> {{content.data.opening_hours}}</p>{{/content.data.opening_hours}}' +
+'{{#content.data.phone}}<p><strong>'+translate.tr('carto_phone')+':</strong> {{content.data.phone}}</p>{{/content.data.phone}}' +
+'{{#content.data.contact_phone}}<p><strong>'+translate.tr('carto_phone')+':</strong> {{content.data.contact_phone}}</p>{{/content.data.contact_phone}}' +
+'{{#content.data.website}}<p><strong>'+translate.tr('carto_website')+':</strong> {{content.data.website}}</p>{{/content.data.website}}' +
+'{{#content.data.contact_website}}<p><strong>'+translate.tr('carto_website')+':</strong> {{content.data.contact_website}}</p>{{/content.data.contact_website}}' +
+'<p><a href="http://www.openstreetmap.org/{{content.data.osm_id}}" target="_blank">'+translate.tr('carto_edit_on_osm')+'</a></p>' +
+'<p><strong>'+translate.tr('carto_source')+':</strong> © OpenStreetMap-Contributors</p>' +
+'</div>' +
+'</div>' +
+'<div class="cartodb-popup-tip-container"></div>' +
+'    </div>';
+
+return infowindowTemplateOSM;
+}
+
+function getInfoWindowAccessRestrictionsTemplate(translate){
+
+var infowindowTemplateAR =
+'<div class="cartodb-popup v2">' +
+'<a href="#close" class="cartodb-popup-close-button close">x</a>' +
+'<div class="cartodb-popup-content-wrapper">' +
+'<div class="cartodb-popup-header">' +
+'<h3>{{content.data.name}}</h3>' +
+'</div>' +
+'<div class="cartodb-popup-content">' +
+'{{#content.data.ref}}<p><strong>'+translate.tr('carto_ref')+':</strong> {{content.data.ref}}</p>{{/content.data.ref}}' +
+'{{#content.data.motorcycle_conditional}}<p><strong>'+translate.tr('carto_motorcycle_conditional')+':</strong> {{content.data.motorcycle_conditional}}</p>{{/content.data.motorcycle_conditional}}' +
+'{{#content.data.motorcycle_forward_conditional}}<p><strong>'+translate.tr('carto_motorcycle_conditional')+':</strong> {{content.data.motorcycle_forward_conditional}}</p>{{/content.data.motorcycle_forward_conditional}}' +
+'{{#content.data.motorcycle_backward_conditional}}<p><strong>'+translate.tr('carto_motorcycle_conditional')+':</strong> {{content.data.motorcycle_backward_conditional}}</p>{{/content.data.motorcycle_backward_conditional}}' +
+'<p><strong>'+translate.tr('carto_source')+':</strong> © OpenStreetMap-Contributors</p>' +
+'</div>' +
+'</div>' +
+'<div class="cartodb-popup-tip-container"></div>' +
+'    </div>';
+
+
+return infowindowTemplateAR;
+}
+
+function registerButtons(map, translate, sublayers){
+
+var fuelButtonOn = {
+stateName: 'hide-fuel',
+icon: '<img src="https://kurviger.de/img/maki/icons/fuel-15.svg"/>',
+title: translate.tr('carto_hide') + ' ' + translate.tr('carto_fuel'),
+onClick: function (btn, map) {
+showFuel = false;
+Cookies.set('kurviger.showFuel', false);
+sublayers[0].setCartoCSS(getCartoCss());
+btn.state('show-fuel');
+}
+};
+var fuelButtonOff = {
+stateName: 'show-fuel',
+icon: '<img src="https://kurviger.de/img/maki/icons/fuel-15.svg"/>',
+title: translate.tr('carto_show') + ' ' + translate.tr('carto_fuel'),
+onClick: function (btn, map) {
+showFuel = true;
+Cookies.set('kurviger.showFuel', true);
+sublayers[0].setCartoCSS(getCartoCss());
+btn.state('hide-fuel');
+}
+};
+var fuelButton = L.easyButton({states: getButtonState(fuelButtonOn, fuelButtonOff, showFuel)});
+
+var passButttonOn = {
+stateName: 'hide-pass',
+icon: '<img src="https://kurviger.de/img/maki/icons/mountain-15.svg"/>',
+title: translate.tr('carto_hide') + ' ' + translate.tr('carto_passes'),
+onClick: function (btn, map) {
+showPass = false;
+Cookies.set('kurviger.showPass', false);
+sublayers[0].setCartoCSS(getCartoCss());
+btn.state('show-pass');
+}
+};
+var passButtonOff = {
+stateName: 'show-pass',
+icon: '<img src="https://kurviger.de/img/maki/icons/mountain-15.svg"/>',
+title: translate.tr('carto_show') + ' ' + translate.tr('carto_passes'),
+onClick: function (btn, map) {
+showPass = true;
+Cookies.set('kurviger.showPass', true);
+sublayers[0].setCartoCSS(getCartoCss());
+btn.state('hide-pass');
+}
+};
+var passButton = L.easyButton({states: getButtonState(passButttonOn, passButtonOff, showPass)});
+
+var mechanicButtonOn = {
+stateName: 'hide-mechanic',
+icon: '<img src="https://kurviger.de/img/maki/icons/scooter-15.svg"/>',
+title: translate.tr('carto_hide') + ' ' + translate.tr('carto_mechanic'),
+onClick: function (btn, map) {
+showMechanic = false;
+Cookies.set('kurviger.showMechanic', false);
+sublayers[0].setCartoCSS(getCartoCss());
+btn.state('show-mechanic');
+}
+};
+var mechanicButtonOff = {
+stateName: 'show-mechanic',
+icon: '<img src="https://kurviger.de/img/maki/icons/scooter-15.svg"/>',
+title: translate.tr('carto_show') + ' ' + translate.tr('carto_mechanic'),
+onClick: function (btn, map) {
+showMechanic = true;
+Cookies.set('kurviger.showMechanic', true);
+sublayers[0].setCartoCSS(getCartoCss());
+btn.state('hide-mechanic');
+}
+};
+var mechanicButton = L.easyButton({states: getButtonState(mechanicButtonOn, mechanicButtonOff, showMechanic)});
+
+var museumButtonOn = {
+stateName: 'hide-museum',
+icon: '<img src="https://kurviger.de/img/maki/icons/museum-15.svg"/>',
+title: translate.tr('carto_hide') + ' ' + translate.tr('carto_museum'),
+onClick: function (btn, map) {
+showMuseum = false;
+Cookies.set('kurviger.showMuseum', false);
+sublayers[0].setCartoCSS(getCartoCss());
+btn.state('show-museum');
+}
+};
+var muesumButtonOff = {
+stateName: 'show-museum',
+icon: '<img src="https://kurviger.de/img/maki/icons/museum-15.svg"/>',
+title: translate.tr('carto_show') + ' ' + translate.tr('carto_museum'),
+onClick: function (btn, map) {
+showMuseum = true;
+Cookies.set('kurviger.showMuseum', true);
+sublayers[0].setCartoCSS(getCartoCss());
+btn.state('hide-museum');
+}
+};
+var museumButton = L.easyButton({states: getButtonState(museumButtonOn, muesumButtonOff, showMuseum)});
+
+var attractionButtonOn = {
+stateName: 'hide-attraction',
+icon: '<img src="https://kurviger.de/img/maki/icons/marker-15.svg"/>',
+title: translate.tr('carto_hide') + ' ' + translate.tr('carto_attraction'),
+onClick: function (btn, map) {
+showAttraction = false;
+Cookies.set('kurviger.showAttraction', false);
+sublayers[0].setCartoCSS(getCartoCss());
+btn.state('show-attraction');
+}
+};
+var attractionButtonOff = {
+stateName: 'show-attraction',
+icon: '<img src="https://kurviger.de/img/maki/icons/marker-15.svg"/>',
+title: translate.tr('carto_show') + ' ' + translate.tr('carto_attraction'),
+onClick: function (btn, map) {
+showAttraction = true;
+Cookies.set('kurviger.showAttraction', true);
+sublayers[0].setCartoCSS(getCartoCss());
+btn.state('hide-attraction');
+}
+};
+var attractionButton = L.easyButton({states: getButtonState(attractionButtonOn, attractionButtonOff, showAttraction)});
+
+var poiBar = L.easyBar([fuelButton, passButton, mechanicButton, museumButton, attractionButton]);
+
+poiBar.addTo(map);
+}
+
+function getButtonState( buttonOn, buttonOff, show){
+if(show){
+return [
+buttonOn, buttonOff
+];
+}else{
+return [
+buttonOff, buttonOn
+];
+}
+}
+
+function getCartoCss() {
+var cartoCss = '';
+
+if (showFuel) {
+cartoCss += '' +
+'#' + poisTableName + '[zoom > 10][category=162]{  ' +
+'marker-file: url(http://com.cartodb.users-assets.production.s3.amazonaws.com/maki-icons/fuel-18.svg);' +
+'marker-fill-opacity: 0.95;' + '' +
+'marker-line-color:#FFF; ' + '' +
+'marker-line-width: 1;' + '' +
+'marker-line-opacity: 1; ' +
+'marker-placement: point; ' +
+'marker-type: ellipse;  ' +
+'marker-width: 15;  ' +
+'marker-fill: #1660A6;  ' +
+'marker-allow-overlap: false;}';
+}
+if (showMechanic) {
+cartoCss += '' +
+'#' + poisTableName + '[zoom > 10][category=100]{  ' +
+'marker-file: url(http://com.cartodb.users-assets.production.s3.amazonaws.com/maki-icons/scooter-18.svg);' +
+'marker-fill-opacity: 0.9;' + '' +
+'marker-line-color:#FFF; ' + '' +
+'marker-line-width: 1;' + '' +
+'marker-line-opacity: 1; ' +
+'marker-placement: point; ' +
+'marker-type: ellipse;  ' +
+'marker-width: 15;  ' +
+'marker-fill: #1660A6;  ' +
+'marker-allow-overlap: false;}';
+}
+if (showParking) {
+cartoCss += '' +
+'#' + poisTableName + '[zoom > 10][category=199]{  ' +
+'marker-file: url(http://com.cartodb.users-assets.production.s3.amazonaws.com/maki-icons/parking-18.svg);' +
+'marker-fill-opacity: 0.9;' + '' +
+'marker-line-color:#FFF; ' + '' +
+'marker-line-width: 1;' + '' +
+'marker-line-opacity: 1; ' +
+'marker-placement: point; ' +
+'marker-type: ellipse;  ' +
+'marker-width: 15;  ' +
+'marker-fill: #1660A6;  ' +
+'marker-allow-overlap: false;}';
+}
+if (showMuseum) {
+cartoCss += '' +
+'#' + poisTableName + '[zoom > 10][category=149]{  ' +
+'marker-file: url(http://com.cartodb.users-assets.production.s3.amazonaws.com/maki-icons/museum-18.svg);' +
+'marker-fill-opacity: 0.9;' + '' +
+'marker-line-color:#FFF; ' + '' +
+'marker-line-width: 1;' + '' +
+'marker-line-opacity: 1; ' +
+'marker-placement: point; ' +
+'marker-type: ellipse;  ' +
+'marker-width: 15;  ' +
+'marker-fill: #1660A6;  ' +
+'marker-allow-overlap: false;}';
+}
+if (showAttraction) {
+cartoCss += '' +
+'#' + poisTableName + '[zoom > 10][category=139]{  ' +
+'marker-file: url(http://com.cartodb.users-assets.production.s3.amazonaws.com/maki-icons/marker-18.svg);' +
+'marker-fill-opacity: 0.9;' + '' +
+'marker-line-color:#FFF; ' + '' +
+'marker-line-width: 1;' + '' +
+'marker-line-opacity: 1; ' +
+'marker-placement: point; ' +
+'marker-type: ellipse;  ' +
+'marker-width: 15;  ' +
+'marker-fill: #1660A6;  ' +
+'marker-allow-overlap: false;}';
+}
+if (showPass) {
+cartoCss += '' +
+'#' + poisTableName + '[zoom > 10][category=200]{  ' +
+'marker-file: url(https://kurviger.de/img/maki/icons/mountain-11.svg);' +
+'marker-fill-opacity: 0.9;' + '' +
+'marker-line-color:#FFF; ' + '' +
+'marker-line-width: 1;' + '' +
+'marker-line-opacity: 1; ' +
+'marker-placement: point; ' +
+'marker-type: ellipse;  ' +
+'marker-width: 15;  ' +
+'marker-fill: #1660A6;  ' +
+'marker-allow-overlap: false;}';
+}
+return cartoCss;
+}
+
+</script>
+<script data-rocketsrc="/js/cartodb.js?v=3.15.10 " type="text/rocketscript"></script>
+<script type="text/rocketscript" data-rocketsrc="/js/main.js?v=1.3.9"></script>
+</body>
+</html>
