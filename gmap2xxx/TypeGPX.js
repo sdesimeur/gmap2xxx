@@ -47,7 +47,7 @@ function TypeGPX (tabs,myCaller) {
                 tmp=' lat="' + val.lat + '" lon="' + val.lng + '">';
                 this.tabres.rte.push("\t\t" + '<rtept' + tmp);
                 this.tabres.wpt.push("\t\t" + '<wpt' + tmp);
-                tmp=((val.name=="")?"N" + val.lat + ",E" + val.lng:val.name);
+                tmp=((val.name=="")?"N" + val.lat + ",E" + val.lng:val.name.encode());
                 etapename='E'+nowpt+'_'+tmp; 
                 tmp="\t\t\t<name>" + etapename + '</name>' + "\n";
                 tmp+= "\t\t\t<cmt>" + etapename + '</cmt>' + "\n";
@@ -77,7 +77,7 @@ function TypeGPX (tabs,myCaller) {
                                 var coord = val.start_location;
                                 var tmp =' lat="' + coord.lat + '" lon="' + coord.lng + '">';
                                 this.tabres.wpt.push("\t\t<wpt" + tmp);
-                                var etapename='I'+nowpt+'_'+val.html_instructions.replace(/<\/?[^>]+(>|$)/g, "");
+                                var etapename='I'+nowpt+'_'+val.html_instructions.replace(/<\/?[^>]+(>|$)/g, "").encode();
                                 tmp="\t\t\t<name>" +  etapename  +  '</name>';
                                 tmp+= "<cmt>" + etapename  + '</cmt>';
                                 tmp+= "<desc>" + etapename + '</desc>';
@@ -102,21 +102,21 @@ function TypeGPX (tabs,myCaller) {
             this.msgError(terr);
         }
         var ret = "";
-        ret+='<?xml version="1.0" encoding="ISO-8859-1" standalone="no" ?>' + "\n";
+        ret+='<?xml version="1.0" encoding="UTF-8" standalone="no" ?>' + "\n";
         ret+='<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="gmap2xxx" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">' + "\n";
         //var st=this.tabres.length;
         //for (var i=0;i<st;i++)
         ret+=this.tabres.wpt.join("\n");
         ret+="\n";
         ret+="\t" + '<rte>' +"\n";
-        ret+="\t\t" + '<name>rte' +  this.vars.fname + '</name>' + "\n";
+        ret+="\t\t" + '<name>rte' +  this.vars.fname.encode() + '</name>' + "\n";
         //for (var i=0;i<st;i++)
             ret+=this.tabres.rte.join("\n");
         ret+="\n\t" + '</rte>' + "\n";
         
         if (this.vars.extratrk) {
             ret+="\t" + '<trk>' +"\n";
-            ret+="\t\t" + '<name>trk' +  this.vars.fname + '</name>' +"\n";
+            ret+="\t\t" + '<name>trk' +  this.vars.fname.encode() + '</name>' +"\n";
             ret+="\t\t" + '<number>1</number>' +"\n";
             ret+="\t\t\t" + '<trkseg>' +"\n";
             //for (var i=0;i<st;i++)
