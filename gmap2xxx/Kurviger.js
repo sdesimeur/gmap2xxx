@@ -20,7 +20,7 @@ function Kurviger(del1step,url,namesHelper) {
     //  var urld=urldecode(url);
         var tmp1=decodeURIComponent(this.url);
         var tmp2=tmp1.split("?");
-        var data=tmp2[0].split("&");
+        var data=tmp2[1].split("&");
         this.options.autoroute=(data.indexOf('avoid_motorways=true')>-1);
         this.options.peage=(data.indexOf('avoid_toll_roads=true')>-1);
         do {
