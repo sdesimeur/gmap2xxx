@@ -31,7 +31,7 @@ function Kurviger(del1step,url,namesHelper) {
                 var wpt =new Point("",coord[0],coord[1]);
                 this.tabwpts.push(wpt);
             }
-        } while (value.length != 0);
+        } while (data.length != 0);
         if (this.del1step) {
             this.tabwpts.shift();
         }
