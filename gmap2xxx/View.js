@@ -7,7 +7,7 @@ function View () {
         {regExp: /^(http)?s?:?\/?\/?www\.google\.[a-z]*\/maps\/dir\//i, mapObj: GoogleMaps },
         {regExp: /^(http)?s?:?\/?\/?(www\.bing\.[a-z]*\/maps|binged\.[a-z]*\/)/i, mapObj: BingMaps },
         {regExp: /^(http)?s?:?\/?\/?www\.viamichelin\.[a-z]*\/web\/Itineraires/i, mapObj: ViaMichelin },
-        {regExp: /^(http)?s?:?\/?\/?www\.yournavigation\.org/i, mapObj: YourNavigation }
+        {regExp: /^(http)?s?:?\/?\/?www\.yournavigation\.org/i, mapObj: YourNavigation },
         {regExp: /^(http)?s?:?\/?\/?kurviger\.de/i, mapObj: Kurviger }
     ];
     var sizeurls=60;
