@@ -26,8 +26,7 @@ function Kurviger(del1step,url,namesHelper) {
         do {
             value=data.shift();
             var test1 = /^point=/i.test(value);
-            if (test) {
-                rtevalue=route.shift();
+            if (test1) {
                 var coord=value.replace("point=","").split(',');
                 var wpt =new Point("",coord[0],coord[1]);
                 this.tabwpts.push(wpt);
