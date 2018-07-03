@@ -96,10 +96,16 @@ function SendHelper (myCaller) {
     
     this.sendmailafile = function (data) {
         var fname=this.vars.fname+'.'+this.vars.typeext.substr(-3);
+        var sttab = this.tabUrls.length;
+        var mbody = "<html><head>Itineraire de GMap2XXX</head><body>Veuillez trouver ci-joint le fichier de votre itineraire comprenant les URLs suivantes:<ul>";
+        for (var i=0; i<sttab; i++) {
+            mbody += "<li><a href=\"" + this.tabUrls[i].url + "\">url" + i  + "</a></li>";    
+        }
+        mbody +="</ul><br>-- <br>Samuel Desimeur<br></body></html>";
         $.ajax({
             method: "POST",
             url: "mymailfile.php",
-            data: { ename: utils.base64(this.vars.ename), data: utils.base64(data), fname:utils.base64(fname), token: $('#token').val(), IP: $('#IP').val() },
+            data: { mbody: utils.base64(mbody), ename: utils.base64(this.vars.ename), data: utils.base64(data), fname:utils.base64(fname), token: $('#token').val(), IP: $('#IP').val() },
             success : function( msg ) {
                 new Dialog("mail").affiche("Envoi d'EMail",msg,false);
             }.bind(this),
