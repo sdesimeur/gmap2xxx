@@ -16,7 +16,7 @@ function AllTabWpts (sendHelper) {
             var tabs = [];
             var st = this.allTabs.length;
             for (var i=0;i<st;i++) {
-                tabs.push(this.allTabs[i].maptab);
+                tabs.push(this.allTabs[i]);
             }
             this.sendHelper.toSubmit(tabs); 
         }

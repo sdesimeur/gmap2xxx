@@ -1,14 +1,17 @@
 "use strict";
-var version = 67;
+var version = '084';
 var javaScriptFiles = [
+    "./Utils.js",
     "./Vars.js",
-    "./Base64.js",
     "../mysql/SendPHPRequest.js",
     "./Dialog.js",
     "./Point.js",
     "./MyCookies.js",
     "./GoogleMaps.js",
+    "./Kurviger.js",
+    "./YourNavigation.js",
     "./BingMaps.js",
+    "./ViaMichelin.js",
     "./polyline.js",
     "./JSONHelper.js",
     "./SendHelper.js",

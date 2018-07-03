@@ -3,6 +3,13 @@ function View () {
     this.itnMsgMoreThan2Urls = false;
     this.vars = new Vars();
     this.myCookies = new MyCookies(this.vars);
+    this.mapObjects = [
+        {regExp: /^(http)?s?:?\/?\/?www\.google\.[a-z]*\/maps\/dir\//i, mapObj: GoogleMaps },
+        {regExp: /^(http)?s?:?\/?\/?(www\.bing\.[a-z]*\/maps|binged\.[a-z]*\/)/i, mapObj: BingMaps },
+        {regExp: /^(http)?s?:?\/?\/?www\.viamichelin\.[a-z]*\/web\/Itineraires/i, mapObj: ViaMichelin },
+        {regExp: /^(http)?s?:?\/?\/?www\.yournavigation\.org/i, mapObj: YourNavigation },
+        {regExp: /^(http)?s?:?\/?\/?kurviger\.de/i, mapObj: Kurviger }
+    ];
     var sizeurls=60;
     
     var itninfotxt='';
@@ -113,36 +120,37 @@ function View () {
         var testGoogleShort = false;
         var error = false;
         var nourl = true;
-        var i=0;
+        var idxUrl=0;
         var tabUrls = [];
         var sendHelper = new SendHelper (this);
         var twpts = new AllTabWpts (sendHelper);
+        var namesHelper=new NamesHelper (twpts);
         do {
-            var tempurl=$('#url'+i);
-            var tempdel1step=$('#del1step'+i).is(":checked");
+            var tempurl=$('#url'+idxUrl);
+            var tempdel1step=$('#del1step'+idxUrl).is(":checked");
             var tempurlval = tempurl.val();
-            var temp;
             testGoogleShort = /^(http)?s?:?\/?\/goo\.gl\//i.test(tempurlval);
             if (testGoogleShort) {
                 break;
             }
-            var testGoogle = /^(http)?s?:?\/?\/?www\.google\.[a-z]*\/maps\/dir\//i.test(tempurlval);
-            var testBing = /^(http)?s?:?\/?\/?www\.bing\.[a-z]*\/maps/i.test(tempurlval);
-            if (testGoogle) {
-                temp = new GoogleMaps(tempdel1step);
+            var testOk=false;
+            for (var idxMapObjs=0; idxMapObjs<this.mapObjects.length; idxMapObjs++) {
+                var testMapObj = this.mapObjects[idxMapObjs].regExp.test(tempurlval);
+                if (testMapObj) {
+                    var temp = new this.mapObjects[idxMapObjs].mapObj(tempdel1step,tempurlval,namesHelper);
+                    twpts.addTab(temp);
+                    temp.run();
+                    testOk=true;
+                }
             }
-            if (testBing) {
-                temp = new BingMaps(tempdel1step);
-            }
-            if (testBing || testGoogle) {
+
+            if (testOk) {
                 this.vars.addUrl({
                     url: tempurlval,
                     supr: tempdel1step
                 });
                 nourl = false;
-                temp.addUrl(tempurlval);
-                twpts.addTab(new NamesHelper (temp,twpts));
-                tabUrls[i] = {
+                tabUrls[idxUrl] = {
                     url : tempurlval,
                     del1step : tempdel1step,
                     errorjson : false,
@@ -152,18 +160,18 @@ function View () {
                 error = true;
                 break;
             }
-            i++;
+            idxUrl++;
         } while (tempurl.length>0);
         if (error) {
-            $('#url'+i).focus();
-            new Dialog("erreur").affiche('Erreur de saisie',"<p>l'URL n°"+(i+1)+" est erron&eacute;e</p>",false);
+            $('#url'+idxUrl).focus();
+            new Dialog("erreur").affiche('Erreur de saisie',"<p>l'URL n°"+(idxUrl+1)+" est erron&eacute;e</p>",false);
             return false;
         } else if ( nourl ) {
             new Dialog("erreur").affiche('Erreur de saisie','<p>Vous devez entrer une URL</p>',false);
             $('#url0').focus();
             return false;
         } else if (testGoogleShort) {
-            $('#url'+i).focus();
+            $('#url'+idxUrl).focus();
             new Dialog("erreur").affiche('Erreur de saisie','<p>Vous devez entrer une URL longue, et pas une URL r&eacute;duite</p>',false);
             return false;
         } else {
@@ -253,13 +261,20 @@ function View () {
 
 $(document).ready(function () { 
     var view = new View();
-    document.body.innerHTML=document.body.innerHTML.replace(/###GMAPLNK###/g,'<a href="https://www.google.fr/maps" target="_blank">GoogleMaps</a>');
+    var title = $(document).prop('title');
+    title = title.replace('###VERSION###',version);
+    $(document).attr('title',title);
+    document.body.innerHTML=document.body.innerHTML.replace(/###VERSION###/g,version);
+    document.body.innerHTML=document.body.innerHTML.replace(/###GMAPLNK###/g,'<a href="https://www.google.fr/maps/dir/" target="_blank">GoogleMaps</a>');
+    document.body.innerHTML=document.body.innerHTML.replace(/###YNLNK###/g,'<a href="http://www.yournavigation.org/" target="_blank">YourNavigation</a>');
     document.body.innerHTML=document.body.innerHTML.replace(/###BMAPLNK###/g,'<a href="https://www.bing.com/mapspreview" target="_blank">BingMaps</a>');
+    document.body.innerHTML=document.body.innerHTML.replace(/###VIAMICHELIN###/g,'<a href="https://www.viamichelin.fr/web/Itineraires" target="_blank">ViaMichelin</a>');
+    document.body.innerHTML=document.body.innerHTML.replace(/###KURVIGER###/g,'<a href="https://kurviger.de/en" target="_blank">Kurviger</a>');
     view.loadall();
     
     var tmp = view.myCookies.getCookie('URLS');
     if (tmp != null) {
-        var tmp1=JSON.parse(Base64.decode(tmp));
+        var tmp1=JSON.parse(atob(tmp));
         var st = tmp1.length;
         for (var i=0;i<st;i++) {
             $('#url'+i).val(tmp1[i].url);

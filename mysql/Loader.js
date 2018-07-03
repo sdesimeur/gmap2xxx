@@ -1,8 +1,8 @@
 "use strict";
-var version = 3;
+var version = 4;
 var javaScriptFiles = [
     "./Vars.js",
-    "./Base64.js",
+    "./Utils.js",
     "./SendPHPRequest.js",
     "./Dialogs.js",
     "./SendHelper.js",

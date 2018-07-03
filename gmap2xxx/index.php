@@ -1,12 +1,16 @@
+<?php 
+header('Content-Type: text/html; charset=utf-8');
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<title>Conversion d&rsquo;une URL en fichier ITN pour Tomtom ou en fichier GPX</title>
+	<title>Conversion d&rsquo;une URL en fichier ITN pour Tomtom ou en fichier GPX (Version ###VERSION###)</title>
 <link rel="stylesheet" href="../jquery/jquery-ui.min.css" />
 <link rel="stylesheet" href="./index.css" />
 	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <meta charset="UTF-8">
 	<meta type="keywords" content="google,maps,googlemaps,gps,tomtom,itn,gpx,conversion,convert,route" />
-        <meta type="description" content="Transformez vos URL GoogleMaps en fichier pour un GPS." />
+        <meta type="description" content="Transformez vos URL GoogleMaps en fichier pour un GPS (Version ###VERSION###)." />
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <meta http-equiv="Pragma" content="no-cache" />
         <meta http-equiv="Expires" content="0" />
@@ -14,7 +18,7 @@
 <body>
     <?php include "../mysql/security.php"; ?>
     <div id="dialogs"></div>
-	<script type="text/javascript" src="./Loader.js?version=67"></script>
+	<script type="text/javascript" src="./Loader.js?version=084"></script>
 	<script type="text/javascript" src="../jquery/jquery-1.12.3.min.js"></script>
 	<script type="text/javascript" src="../jquery/jquery-ui.min.js"></script>
 <!--	<script type="text/javascript" src="./View.js"></script>
@@ -40,7 +44,7 @@
 					</form>
 				</td>
 			</tr></table>
-			<table class="titre_principal mepg"><tr><td><h2>Conversion d&rsquo;une URL<br/>###GMAPLNK### ou ###BMAPLNK###<br/>en fichier ITN pour Tomtom<br/>ou en fichier GPX</h2></td></tr></table>
+			<table class="titre_principal mepg"><tr><td><h2>Conversion d&rsquo;une URL<br/>###GMAPLNK### ou ###BMAPLNK### ou ###YNLNK### ou ###VIAMICHELIN### ou ###KURVIGER###<br/>en fichier ITN pour Tomtom<br/>ou en fichier GPX (Version ###VERSION###)</h2></td></tr></table>
 		</td>
 		<td class="cote" id="droite">
 				<h2>Facebook</h2>
@@ -115,12 +119,16 @@
 				<tr>
 					<td class="gris">
 						<h1>ATTENTION</h1>
-						<h2>Vous devez utiliser la nouvelle interface de ###GMAPLNK###<br> &nbsp;&nbsp;&nbsp;ou l'interface ###BMAPLNK###.<br>
+						<h2>Vous devez utiliser l'interface de ###GMAPLNK###<br>
+                        &nbsp;&nbsp;&nbsp;ou l'interface ###BMAPLNK###,<br>
+                        &nbsp;&nbsp;&nbsp;ou l'interface ###VIAMICHELIN###,<br>
+                        &nbsp;&nbsp;&nbsp;ou l'interface ###YNLNK###.<br>
+                        &nbsp;&nbsp;&nbsp;ou l'interface ###KURVIGER###.<br>
 						</h2>
 						<ul id="zoneallurls">
 							<li>
 								<fieldset>
-									<label for="url0"><span id="txturl0">Entrez une URL</span> obtenue dans ###GMAPLNK### ou dans ###BMAPLNK### (Lisez les <a href="#remarques">remarques</a> ci-dessous):</label><br/>
+									<label for="url0"><span id="txturl0">Entrez une URL</span> obtenue dans ###GMAPLNK### ou dans ###BMAPLNK### ou dans ###VIAMICHELIN### ou dans ###YNLNK### ou dans ###KURVIGER### (Lisez les <a href="#remarques">remarques</a> ci-dessous):</label><br/>
 									<input name="url[]" id="url0" type="text" class="url">
 									&nbsp;<button id="razurl0" value="razurl" type="button" class="razurl">Remise à zéro de l'URL</button><br/>
 									<label for="del1step0">Si vous souhaitez supprimer la premi&egrave;re &eacute;tape pour cette URL, cochez la case suivante:</label>
@@ -197,9 +205,9 @@
 		Remarque:
 	</a></h4>
 	Il n&rsquo;y a aucune garantie du r&eacute;sultat, car votre GPS n'a pas le m&ecirc;me moteur de calcul que 
-	###GMAPLNK### et que ###BMAPLNK###.
+	###GMAPLNK###, que ###BMAPLNK###, que ###VIAMICHELIN###, que ###YNLNK### et que ###KURVIGER###.
 	<br/>
-	La seule garantie est de cr&eacute;er un itin&eacute;raire qui passera par les points que vous avez indiqu&eacute;s lors de la création de votre itinéraire sous ###GMAPLNK### ou sous ###BMAPLNK###.
+	La seule garantie est de cr&eacute;er un itin&eacute;raire qui passera par les points que vous avez indiqu&eacute;s lors de la création de votre itinéraire sous ###GMAPLNK###, ou sous ###BMAPLNK###, ou sous ###VIAMICHELIN###, ou sous ###YNLNK###, ou sous ###KURVIGER###.
 	<br/>
 </td></tr>
 <tr><td class="conseils">
