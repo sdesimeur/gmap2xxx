@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Saisissez vos identifants"
+AuthUserFile /kunden/homepages/33/d152137012/htdocs/.pass/.htpasswd
+Require user admin
+
