@@ -31,6 +31,8 @@ function MyCookies (vars) {
         this.vars.del1step1 = ((tmp==="1") ||  (tmp==="0"))?tmp=="1":false;
 //        tmp = this.getCookie("EMAILOK");
 //        this.vars.emailok = ((tmp=="1") ||  (tmp=="0"))?tmp=="1":true;
+        tmp = this.getCookie("ROUTEWPTS");
+        this.vars.routewpts = ((tmp==="1") ||  (tmp==="0"))?tmp=="1":false;
         tmp = this.getCookie("EXTRAWPTS");
         this.vars.extrawpts = ((tmp==="1") ||  (tmp==="0"))?tmp=="1":false;
         tmp = this.getCookie("EXTRATRK");
@@ -47,6 +49,7 @@ function MyCookies (vars) {
     this.setAllCookies = function () {
         this.setCookie ("EMAILOK", this.vars.emailok?"1":"0");
         this.setCookie ("TYPEEXT", this.vars.typeext);
+        this.setCookie ("ROUTEWPTS", this.vars.routewpts?"1":"0");
         this.setCookie ("EXTRAWPTS", this.vars.extrawpts?"1":"0");
         this.setCookie ("EXTRATRK", this.vars.extratrk?"1":"0");
         this.setCookie ("FNAME", this.vars.fname);

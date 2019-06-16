@@ -4,6 +4,7 @@ function Vars () {
     this.emailok = true;
 //    this.emailok = false;
     this.typeext = "typeitn";
+    this.routewpts = false;
     this.extrawpts = false;
     this.extratrk = false;
     this.fname = "route0";

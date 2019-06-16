@@ -45,18 +45,20 @@ function TypeGPX (tabs,myCaller) {
             for (var i=0; i<sttabwpts; i++) {
                 var val = this.tabs[j].tabwpts[i];
                 tmp=' lat="' + val.lat + '" lon="' + val.lng + '">';
-                this.tabres.rte.push("\t\t" + '<rtept' + tmp);
-                this.tabres.wpt.push("\t\t" + '<wpt' + tmp);
                 tmp=((val.name=="")?"N" + val.lat + ",E" + val.lng:val.name.encode());
                 etapename='E'+nowpt+'_'+tmp; 
                 tmp="\t\t\t<name>" + etapename + '</name>' + "\n";
                 tmp+= "\t\t\t<cmt>" + etapename + '</cmt>' + "\n";
                 tmp+= "\t\t\t<desc>" + etapename + '</desc>' + "\n";
                 tmp+= "\t\t\t" + '<sym>Custom 0</sym>';
+                this.tabres.rte.push("\t\t" + '<rtept' + tmp);
                 this.tabres.rte.push(tmp);
                 this.tabres.rte.push("\t\t" + '</rtept>');
-                this.tabres.wpt.push(tmp);
-                this.tabres.wpt.push("\t\t" + '</wpt>');
+                if (this.vars.routewpts) {
+                    this.tabres.wpt.push("\t\t" + '<wpt' + tmp);
+                    this.tabres.wpt.push(tmp);
+                    this.tabres.wpt.push("\t\t" + '</wpt>');
+                }
                 nowpt++;
             }
         }
@@ -106,8 +108,11 @@ function TypeGPX (tabs,myCaller) {
         ret+='<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="gmap2xxx" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">' + "\n";
         //var st=this.tabres.length;
         //for (var i=0;i<st;i++)
-        ret+=this.tabres.wpt.join("\n");
-        ret+="\n";
+        if (this.vars.extrawpts || this.vars.routewpts )
+        {
+            ret+=this.tabres.wpt.join("\n");
+            ret+="\n";
+        }
         ret+="\t" + '<rte>' +"\n";
         ret+="\t\t" + '<name>rte' +  this.vars.fname.encode() + '</name>' + "\n";
         //for (var i=0;i<st;i++)

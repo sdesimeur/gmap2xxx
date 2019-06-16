@@ -106,8 +106,9 @@ header('Content-Type: text/html; charset=utf-8');
 					</p>
 					<div id="gpxoptions">
 					Options : <br>
-					&nbsp;<input name="extratrk" id="extratrk" value="on" type="checkbox"><label for="extratrk"> Ajouter une trace (trk) lisible pour les applications (OSMAND, Locus, ...)</label><br>
+					&nbsp;<input name="routewpts" id="routewpts" value="on" type="checkbox"><label for="routewpts"> Ajouter les points de la route comme de points d'int&eacute;r&ecirc;t (Attention certains GPS ajoute ces points à la route).</label><br>
 					&nbsp;<input name="extrawpts" id="extrawpts" value="on" type="checkbox"><label for="extrawpts"> Ajouter les waypoints des indications des changements de direction obtenus dans ###GMAPLNK###.</label><br>
+					&nbsp;<input name="extratrk" id="extratrk" value="on" type="checkbox"><label for="extratrk"> Ajouter une trace (trk) lisible pour les applications (OSMAND, Locus, ...)</label><br>
 					</div>
 
 				</td>

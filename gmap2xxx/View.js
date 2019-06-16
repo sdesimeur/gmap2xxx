@@ -213,6 +213,9 @@ function View () {
         $(document).on('change','#del1step1',function () {
             this.vars.del1step1=$('#del1step1').is(':checked');
         }.bind(this));
+        $(document).on('change','#routewpts',function () {
+            this.vars.routewpts=$('#routewpts').is(':checked');
+        }.bind(this));
         $(document).on('change','#extrawpts',function () {
             this.vars.extrawpts=$('#extrawpts').is(':checked');
         }.bind(this));
@@ -241,7 +244,7 @@ function View () {
             });
         $(document).on('click','#submitbtn',function () {
             this.submit_form();}.bind(this));
-        $(document).on('change','#ename,#fname,#extratrk,#extrawpts,#del1step0,#del1step1,#sendtype,[name=typeext],[name=sendtype]',function () {this.myCookies.setAllCookies();}.bind(this));
+        $(document).on('change','#ename,#fname,#extratrk,#routewpts,#extrawpts,#del1step0,#del1step1,#sendtype,[name=typeext],[name=sendtype]',function () {this.myCookies.setAllCookies();}.bind(this));
         
         
         $('#ename').val(this.vars.ename);
@@ -250,6 +253,7 @@ function View () {
         $('[name=sendtype][value='+this.vars.sendtype+']').prop('checked',true);
         $('[name=typeext][value='+this.vars.typeext+']').prop('checked',true);
         $('#extratrk').prop('checked',this.vars.extratrk);
+        $('#routewpts').prop('checked',this.vars.routewpts);
         $('#extrawpts').prop('checked',this.vars.extrawpts);
         $('#emailok').prop('checked',this.vars.emailok);
         $('.url').prop('size',sizeurls);
