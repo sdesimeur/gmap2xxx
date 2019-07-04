@@ -1,9 +1,9 @@
 "use strict";
 
 var javaScriptFiles = [
-    "../debug.js",
-    "./xxx2gmap.js",
-    "./Controler.js"
+    "./debug.js",
+    "./Controler.js",
+    "./xxx2gmap.js"
     ];
 
 var filesadded=""; //list of files already added
@@ -43,4 +43,4 @@ function loadScripts () {
     }
 }
 
-window.onload = loadScripts;
+loadScripts();
