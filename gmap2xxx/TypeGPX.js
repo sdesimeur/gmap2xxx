@@ -45,17 +45,19 @@ function TypeGPX (tabs,myCaller) {
             for (var i=0; i<sttabwpts; i++) {
                 var val = this.tabs[j].tabwpts[i];
                 tmp=' lat="' + val.lat + '" lon="' + val.lng + '">';
+                this.tabres.rte.push("\t\t" + '<rtept' + tmp);
+                if (this.vars.routewpts) {
+                    this.tabres.wpt.push("\t\t" + '<wpt' + tmp);
+                }
                 tmp=((val.name=="")?"N" + val.lat + ",E" + val.lng:val.name.encode());
                 etapename='E'+nowpt+'_'+tmp; 
                 tmp="\t\t\t<name>" + etapename + '</name>' + "\n";
                 tmp+= "\t\t\t<cmt>" + etapename + '</cmt>' + "\n";
                 tmp+= "\t\t\t<desc>" + etapename + '</desc>' + "\n";
                 tmp+= "\t\t\t" + '<sym>Custom 0</sym>';
-                this.tabres.rte.push("\t\t" + '<rtept' + tmp);
                 this.tabres.rte.push(tmp);
                 this.tabres.rte.push("\t\t" + '</rtept>');
                 if (this.vars.routewpts) {
-                    this.tabres.wpt.push("\t\t" + '<wpt' + tmp);
                     this.tabres.wpt.push(tmp);
                     this.tabres.wpt.push("\t\t" + '</wpt>');
                 }
