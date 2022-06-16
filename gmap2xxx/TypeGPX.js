@@ -49,7 +49,7 @@ function TypeGPX (tabs,myCaller) {
                 if (this.vars.routewpts) {
                     this.tabres.wpt.push("\t\t" + '<wpt' + tmp);
                 }
-                tmp=((val.name=="")?"N" + val.lat + ",E" + val.lng:escape(val.nameencode()));
+                tmp=((val.name=="")?"N" + val.lat + ",E" + val.lng:escape(val.name.encode()));
                 etapename='E'+nowpt+'_'+tmp; 
                 tmp="\t\t\t<name>" + etapename + '</name>' + "\n";
                 tmp+= "\t\t\t<cmt>" + etapename + '</cmt>' + "\n";
