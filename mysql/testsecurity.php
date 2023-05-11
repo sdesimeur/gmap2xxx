@@ -17,6 +17,7 @@ if($conn->connect_error) {
         $sqldel="DELETE FROM Sessions WHERE (CURRENT_TIMESTAMP()-ndate)>(15*60)";
         $sqlupd=sprintf("UPDATE Sessions SET ndate=null WHERE token='%s'",$token);
         $sqlver=sprintf("SELECT id From Sessions WHERE (ip='%s' AND token='%s')",$IP,$token);
+        //$sqlver=sprintf("SELECT id From Sessions WHERE (token='%s')",$token);
         $conn->query($sqldel);
         $conn->query($sqlupd);
         $result = $conn->query($sqlver);
@@ -25,6 +26,7 @@ if($conn->connect_error) {
         } else {
             header("HTTP/1.0 409 Conflict");
             trigger_error("Votre session a expirée", E_USER_NOTICE);
+            trigger_error("la requete en echec est \"" . $sqlver . "\"", E_USER_NOTICE);
         }
     } else {
         nextFunc($conn);

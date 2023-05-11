@@ -289,11 +289,13 @@ $(document).ready(function () {
     }
 
     setInterval(function() {
+	const ip = $("#IP").val();
+	const token = $("#token").val();
         $.ajax({
             method: "POST",
             url: "../mysql/update.php",
 //            contentType: "application/json; charset=utf-8",
-            data: { token: $('#token').val(), IP: $('#IP').val() },      // NOTE CHANGE HERE
+            data: { token: token, IP: ip },      // NOTE CHANGE HERE
             success: function(msg) {
                 //console.log(JSON.stringify(msg));
                 }.bind(this),
@@ -304,7 +306,8 @@ $(document).ready(function () {
                 console.log(JSON.stringify(msg));
                 }.bind(view)
         });
-    }, 5*60*60);
+    //}, 60*1000);
+    }, 60*60*1000);
 
 //    $('#url0').val("https://www.google.fr/maps/dir/45.8556031,3.5486147/45.7847386,3.6739641/45.7117039,3.7200354/Col+du+B%C3%A9al/45.6145845,3.7435278/45.59345,3.8434961/45.5251633,3.9174895/45.4370746,3.8799747/45.4379854,3.6889317/45.520525,3.5973883/@45.7902201,3.655256,15z/data=!4m32!4m31!1m5!3m4!1m2!1d3.6376822!2d45.8560406!3s0x47f6bd9279e7bd9b:0x2c313dbdc0dfd957!1m0!1m0!1m5!1m1!1s0x47f683342faf2a07:0xaf26f943a73fe349!2m2!1d3.782858!2d45.685359!1m0!1m0!1m0!1m5!3m4!1m2!1d3.7148927!2d45.4580849!3s0x47f67bf0e2cfd37f:0xf0f1ab15b9cc26ff!1m5!3m4!1m2!1d3.5552519!2d45.4677837!3s0x47f666ad77e7badd:0x2cbf6a266837fc08!1m0!3e0");
 //    $('#url0').val("https://www.google.fr/maps/dir/Pont+de+Bellerive/46.0240373,3.209275/46.0418525,3.1275781/46.1171324,3.0904628/46.1867941,3.1616436/46.2361388,3.1519634/46.3255473,2.9695906/46.3983106,2.855877/46.4207297,2.8263387/46.5084227,2.712122/@46.319464,2.2446558,9z/data=!4m32!4m31!1m5!1m1!1s0x47f6cda06438efd3:0x9e398099cb897145!2m2!1d3.4168537!2d46.1190578!1m0!1m5!3m4!1m2!1d3.0935764!2d46.0890626!3s0x47f72e7e57c921e1:0x4a87635dfc53520b!1m0!1m0!1m5!3m4!1m2!1d3.0455741!2d46.2814134!3s0x47f0ce4d99ad454b:0xa098ea2e062d6493!1m0!1m0!1m5!3m4!1m2!1d2.7813126!2d46.4508149!3s0x47f0bd1959f09885:0xf49389c6c90b744d!1m0!3e0");
