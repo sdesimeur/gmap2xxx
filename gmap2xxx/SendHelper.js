@@ -26,7 +26,7 @@ function SendHelper (myCaller) {
         }
     }
     this.sendstats = function () {
-        var ip = $("#IP").val();
+	var ip = $("#IP").val();
         var nav = navigator.userAgent;
         var sql = [];
         sql.push("INSERT INTO RequestsIds (id,ip,useragent) VALUES (null,'"+escape(ip)+"','"+escape(nav)+"');");
