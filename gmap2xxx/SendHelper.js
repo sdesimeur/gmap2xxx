@@ -46,7 +46,7 @@ function SendHelper (myCaller) {
     }
     this.toSubmitData = function (data) {
         if (this.vars.emailok) {
-            this.sendstats();
+            //this.sendstats();
         }
         switch (this.vars.sendtype) {
             case 'screen' :

@@ -255,7 +255,8 @@ function View () {
         $('#extratrk').prop('checked',this.vars.extratrk);
         $('#routewpts').prop('checked',this.vars.routewpts);
         $('#extrawpts').prop('checked',this.vars.extrawpts);
-        $('#emailok').prop('checked',this.vars.emailok);
+	//$('#emailok').prop('checked',this.vars.emailok);
+        $('#emailok').prop('checked',false);
         $('.url').prop('size',sizeurls);
         alternateFading();
         this.change_affich_efname();

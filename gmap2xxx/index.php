@@ -152,15 +152,16 @@ header('Content-Type: text/html; charset=utf-8');
 		</div>
 </td>	
 </tr></table>
-		<div id="myemailzone">
+		<div id="myemailzone" hidden>
 			<table><tr>
 				<td class="gris">
-                    <b><i>Pour m&rsquo;aider &agrave; am&eacute;liorer le script</i></b>, laissez la case suivante coch&eacute;e <input name="emailok" id="emailok" value="on" type="checkbox">,<br>
+                    <b><i>Pour m&rsquo;aider &agrave; am&eacute;liorer le script</i></b>, laissez la case suivante coch&eacute;e <input name="emailok" id="emailok" value="off" type="checkbox">,<br>
 					les URLs utilis&eacute;es me seront automatiquement envoy&eacute;es. <br>
 					<i><b>Ces informations ne seront pas utilis&eacute;es &agrave; des fins commerciales.</b></i><br>
 				</td>
 			</tr></table>
 		</div>
+
 <table>
 <tr><td class="conseils">
 	<div id="variablezone">

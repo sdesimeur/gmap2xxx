@@ -1,8 +1,8 @@
 "use strict";
 function Vars () {
     this.myCookies = null;
-    this.emailok = true;
-//    this.emailok = false;
+//    this.emailok = true;
+    this.emailok = false;
     this.typeext = "typeitn";
     this.routewpts = false;
     this.extrawpts = false;

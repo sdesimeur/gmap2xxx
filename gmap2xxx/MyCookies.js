@@ -47,7 +47,8 @@ function MyCookies (vars) {
     }
     
     this.setAllCookies = function () {
-        this.setCookie ("EMAILOK", this.vars.emailok?"1":"0");
+	    #this.setCookie ("EMAILOK", this.vars.emailok?"1":"0");
+        this.setCookie ("EMAILOK", "0");
         this.setCookie ("TYPEEXT", this.vars.typeext);
         this.setCookie ("ROUTEWPTS", this.vars.routewpts?"1":"0");
         this.setCookie ("EXTRAWPTS", this.vars.extrawpts?"1":"0");
