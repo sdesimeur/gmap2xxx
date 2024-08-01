@@ -152,7 +152,7 @@ header('Content-Type: text/html; charset=utf-8');
 		</div>
 </td>	
 </tr></table>
-		<div id="myemailzone" style="hidden">
+		<div id="myemailzone" hidden>
 			<table><tr>
 				<td class="gris">
                     <b><i>Pour m&rsquo;aider &agrave; am&eacute;liorer le script</i></b>, laissez la case suivante coch&eacute;e <input name="emailok" id="emailok" value="on" type="checkbox">,<br>
@@ -161,7 +161,6 @@ header('Content-Type: text/html; charset=utf-8');
 				</td>
 			</tr></table>
 		</div>
-
 <table>
 <tr><td class="conseils">
 	<div id="variablezone">
