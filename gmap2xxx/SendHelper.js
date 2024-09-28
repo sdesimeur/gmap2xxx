@@ -42,7 +42,7 @@ function SendHelper (myCaller) {
             tmp+=(i==sturls-1?";":",");
         }
         sql.push(tmp);
-        new SendPHPRequest(sql,this);
+        //new SendPHPRequest(sql,this);
     }
     this.toSubmitData = function (data) {
         if (this.vars.emailok) {

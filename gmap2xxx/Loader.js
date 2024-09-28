@@ -1,9 +1,9 @@
 "use strict";
-var version = '090';
+var version = '091';
 var javaScriptFiles = [
     "./Utils.js",
     "./Vars.js",
-    "../mysql/SendPHPRequest.js",
+//    "../mysql/SendPHPRequest.js",
     "./Dialog.js",
     "./Point.js",
     "./MyCookies.js",
