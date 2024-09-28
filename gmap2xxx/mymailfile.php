@@ -1,8 +1,15 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer
+use PHPMailer\PHPMailer\Exception
+
+require_once 'PHPMailer/src/PHPMailer.php';
+require_once 'PHPMailer/src/SMTP.php';
+
+//require_once 'PHPMailerAutoload.php';
+
 $tokenok=true;
 
-
-require_once 'PHPMailerAutoload.php';
 include ("../mysql/testsecurity.php");
 
 function nextFunc ($conn) {
@@ -10,7 +17,7 @@ function nextFunc ($conn) {
     $data = base64_decode($_POST['data']);
     $fname = base64_decode($_POST['fname']);
     $mbody = base64_decode($_POST['mbody']);    
-    $mail = new PHPMailer;
+    $mail = new PHPMailer(false);
     $fileKey='.config/.smtp/.config.php';
     $i=0;
     while ( (! file_exists($fileKey)) && ($i < 10) ) {
@@ -19,8 +26,6 @@ function nextFunc ($conn) {
     }
     if ($i<10) include ($fileKey);
     
-    $mail->setFrom('ionos_php@sdesimeur.com','Samuel Desimeur');
-    $mail->addReplyTo('gps@sdesimeur.com','Samuel Desimeur');
     $mail->addAddress($ename);
     $mail->Subject = 'Itineraire de GMap2XXX';
     $mail->isHTML(true);
