@@ -1,3 +1,4 @@
 *.swp
 .config/*/*.php
 gmap2xxx/PHPMailer
+gmap2xxx/.user.ini
