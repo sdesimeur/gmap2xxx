@@ -1,10 +1,12 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer
-use PHPMailer\PHPMailer\Exception
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-require_once 'PHPMailer/src/PHPMailer.php';
-require_once 'PHPMailer/src/SMTP.php';
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
 //require_once 'PHPMailerAutoload.php';
 
@@ -17,7 +19,8 @@ function nextFunc ($conn) {
     $data = base64_decode($_POST['data']);
     $fname = base64_decode($_POST['fname']);
     $mbody = base64_decode($_POST['mbody']);    
-    $mail = new PHPMailer(false);
+try {    
+    $mail = new PHPMailer(true);
     $fileKey='.config/.smtp/.config.php';
     $i=0;
     while ( (! file_exists($fileKey)) && ($i < 10) ) {
@@ -37,5 +40,8 @@ function nextFunc ($conn) {
     } else {
     	echo "Message envoy&eacute; &agrave; " . $ename;
     }
+} catch (Exception $e) {
+    echo "Message couldnt be sent. PHPMailer error: " . $e->getMessage();
+}
 }
 ?>

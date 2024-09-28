@@ -1,5 +1,5 @@
 "use strict";
-var version = '092';
+var version = '093';
 var javaScriptFiles = [
     "./Utils.js",
     "./Vars.js",
