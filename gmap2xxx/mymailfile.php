@@ -19,7 +19,7 @@ function nextFunc ($conn) {
     }
     if ($i<10) include ($fileKey);
     
-    $mail->setFrom('gps@sdesimeur.com','Samuel Desimeur');
+    $mail->setFrom('ionos_php@sdesimeur.com','Samuel Desimeur');
     $mail->addReplyTo('gps@sdesimeur.com','Samuel Desimeur');
     $mail->addAddress($ename);
     $mail->Subject = 'Itineraire de GMap2XXX';
